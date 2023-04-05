@@ -123,18 +123,11 @@ class User < ApplicationRecord
   end
 
   def self.find_or_create_with_random_password(email)
-    user = User.find_by(email:)
-    return user if user.present?
-
-    user = create_with_random_password(email)
-
-    UserMailer.invited_user(user.id).deliver_later
-
-    user
+    User.find_by(email:) || create_with_random_password(email)
   end
 
   def self.create_with_random_password(email)
-    User.create(
+    user = User.create(
       email:,
       password: SecureRandom.urlsafe_base64,
       confirmation_sent_at: Time.zone.now,
@@ -142,5 +135,9 @@ class User < ApplicationRecord
       reset_password_sent_at: Time.zone.now,
       reset_password_token: SecureRandom.urlsafe_base64
     )
+
+    UserMailer.invited_user(user.id).deliver_later
+
+    user
   end
 end

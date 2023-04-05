@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
 
   attr_reader :current_user
 
-  rescue_from ActiveRecord::RecordInvalid do
+  rescue_from ActiveRecord::RecordNotFound do
     render json: { error: 'Record not found.' }, status: :not_found
   end
 

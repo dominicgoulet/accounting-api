@@ -5,9 +5,8 @@ class MembershipsController < ApplicationController
 
   # POST /memberships
   def create
-    organization = Organization.find(params.dig('membership', 'organization',
-                                                'id') || params.dig('membership', 'organization_id'))
-    user = User.find(params.dig('membership', 'user', 'id') || params.dig('membership', 'user_id'))
+    organization = Organization.find_by(id: membership_params[:organization_id])
+    user = User.find_by(id: membership_params[:user_id])
 
     @membership = Membership.new(user:, organization:)
 
@@ -41,6 +40,6 @@ class MembershipsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def membership_params
-    params.fetch(:membership, {})
+    params.fetch(:membership, {}).permit(:user_id, :organization_id)
   end
 end

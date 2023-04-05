@@ -13,8 +13,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate_with_email_and_password(params[:session][:email], params[:session][:password],
-                                                     request.remote_ip)
+    user = User.authenticate_with_email_and_password(
+      params[:email], params[:password], request.remote_ip
+    )
 
     if user.present?
       sign_in!(user)

@@ -67,7 +67,7 @@ class RegistrationsController < ApplicationController
   end
 
   def user_params
-    params[:user].permit(
+    params.fetch(:user, {}).permit(
       :email,
       :first_name,
       :last_name,

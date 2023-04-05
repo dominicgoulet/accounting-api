@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :sessions, only: [:show, :create, :update, :destroy]
+  get '/session', to: 'sessions#show'
+  patch '/session', to: 'sessions#update'
+  delete '/session', to: 'sessions#destroy'
+  resources :sessions, only: [:create]
 
-  resources :passwords, only: [:show, :create, :update] do
-    collection do
-      patch :confirm
-      patch :accept_invitation
-      patch :cancel_email_change
-    end
-  end
+  patch '/passwords', to: 'passwords#update'
+  resources :passwords, only: [:create]
+
+  # Registrations
+  get '/registrations', to: 'registrations#show'
+  post '/registrations', to: 'registrations#create'
+  patch '/registrations', to: 'registrations#update'
+  patch '/registrations/confirm', to: 'registrations#confirm'
+  patch '/registrations/accept-invitation', to: 'registrations#accept_invitation'
+  patch '/registrations/cancel-email-change', to: 'registrations#cancel_email_change'
 
   resources :passwords, only: [:create, :update]
   resources :organizations, only: [:index, :show, :create, :update, :destroy]
