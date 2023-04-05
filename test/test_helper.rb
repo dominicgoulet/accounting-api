@@ -18,7 +18,7 @@ module ActiveSupport
   class TestCase
     include DatabaseCleanerSupport
 
-    #parallelize(workers: :number_of_processors)
+    # parallelize(workers: :number_of_processors)
     fixtures :all
   end
 end

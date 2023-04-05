@@ -12,17 +12,19 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create a new users given valid params' do
-    post '/registrations', params: { user: { email: 'palpatine@theempire.org', password: '0000' } }, headers: default_headers
+    post '/registrations', params: { user: { email: 'palpatine@theempire.org', password: '0000' } },
+                           headers: default_headers
     assert_response :ok
   end
 
   test 'should not create a new user given invalid params' do
-    post '/registrations', params: { user: {} }#, headers: default_headers
+    post '/registrations', params: { user: {} } # , headers: default_headers
     assert_response :unprocessable_entity
   end
 
   test 'should update current user given valid params' do
-    patch '/registrations', params: { user: { current_password: '0000', first_name: 'Darth', last_name: 'Vader' } }, headers: default_headers
+    patch '/registrations', params: { user: { current_password: '0000', first_name: 'Darth', last_name: 'Vader' } },
+                            headers: default_headers
     assert_response :ok
   end
 
@@ -42,7 +44,8 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should accept invitation for current user given valid confirmation token' do
-    patch '/registrations/accept-invitation', params: { confirmation_token: @user.confirmation_token }, headers: default_headers
+    patch '/registrations/accept-invitation', params: { confirmation_token: @user.confirmation_token },
+                                              headers: default_headers
     assert_response :ok
   end
 

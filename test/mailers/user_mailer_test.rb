@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserMailerTest < ActiveSupport::TestCase
   def setup
     @user = users(:valid)
