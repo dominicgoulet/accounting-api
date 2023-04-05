@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: organizations
+#
+#  id                 :uuid             not null, primary key
+#  name               :string
+#  website            :string
+#  setup_completed_at :datetime
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+valid:
+  name: The Empire
