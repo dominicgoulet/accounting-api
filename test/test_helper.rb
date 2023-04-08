@@ -1,3 +1,4 @@
+# typed: ignore
 # frozen_string_literal: true
 
 require 'simplecov'
@@ -26,5 +27,9 @@ end
 module ActionDispatch
   class IntegrationTest
     include DatabaseCleanerSupport
+
+    def json_data
+      JSON.parse(response.body).deep_symbolize_keys
+    end
   end
 end

@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -25,6 +26,9 @@
 #  updated_at             :datetime         not null
 #
 class User < ApplicationRecord
+  extend T::Sig
+
+  # BCrypt
   has_secure_password
 
   # Associations
@@ -35,16 +39,19 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :password, length: { minimum: 4 }, if: ->(obj) { obj.new_record? || obj.password.present? }
 
+  sig { params(current_password: String).returns(T::Boolean) }
   def can_update_password?(current_password)
     return false unless authenticate(current_password)
 
     true
   end
 
+  sig { returns(String) }
   def avatar_url
     "//www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}?d=identicon"
   end
 
+  sig { returns(T::Boolean) }
   def confirm!
     if unconfirmed_email.present?
       update(
@@ -57,10 +64,12 @@ class User < ApplicationRecord
     end
   end
 
+  sig { returns(T::Boolean) }
   def confirmed?
     confirmed_at.present? && unconfirmed_email.blank?
   end
 
+  sig { returns(T::Boolean) }
   def send_reset_password_instructions!
     update(
       reset_password_sent_at: Time.zone.now,
@@ -68,16 +77,24 @@ class User < ApplicationRecord
     )
 
     UserMailer.new_password(id).deliver_later
+
+    true
   end
 
+  sig { returns(T::Boolean) }
   def cancel_change_email!
+    return false unless unconfirmed_email.present?
+
     update(
       unconfirmed_email: nil,
       confirmation_sent_at: Time.zone.now
     )
   end
 
+  sig { params(new_email: T.nilable(String)).returns(T::Boolean) }
   def change_email!(new_email)
+    return false if new_email == email
+
     update(
       unconfirmed_email: new_email,
       confirmation_sent_at: Time.zone.now,
@@ -85,8 +102,11 @@ class User < ApplicationRecord
     )
 
     UserMailer.change_email(id).deliver_later
+
+    true
   end
 
+  sig { returns(T::Boolean) }
   def send_new_user_instructions!
     update(
       confirmation_sent_at: Time.zone.now,
@@ -94,12 +114,15 @@ class User < ApplicationRecord
     )
 
     UserMailer.new_user(id).deliver_later
+
+    true
   end
 
   #
   # Class methods
   #
 
+  sig { params(email: String, password: String, sign_in_ip: String).returns(T.nilable(User)) }
   def self.authenticate_with_email_and_password(email, password, sign_in_ip)
     user = User.find_by(email:)
     return unless user&.authenticate(password)
@@ -115,17 +138,20 @@ class User < ApplicationRecord
     user
   end
 
+  sig { params(token: String, password: String).returns(T.nilable(User)) }
   def self.reset_password_with_token!(token, password)
     user = User.find_by(reset_password_token: token)
-    return false unless user&.update(password:)
+    return unless user&.update(password:)
 
     user
   end
 
+  sig { params(email: String).returns(User) }
   def self.find_or_create_with_random_password(email)
     User.find_by(email:) || create_with_random_password(email)
   end
 
+  sig { params(email: String).returns(User) }
   def self.create_with_random_password(email)
     user = User.create(
       email:,

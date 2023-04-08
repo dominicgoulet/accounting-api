@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate_with_email_and_password(
       params[:email], params[:password], request.remote_ip
-    )
+    ) if params[:email].present? && params[:password].present?
 
     if user.present?
       sign_in!(user)

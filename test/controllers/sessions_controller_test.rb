@@ -1,3 +1,4 @@
+# typed: ignore
 # frozen_string_literal: true
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
@@ -20,6 +21,8 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   test 'should create a new session given valid params' do
     post sessions_url, params: { email: @user.email, password: '0000' }
     assert_response :ok
+
+    assert json_data[:token].present?
   end
 
   test 'should not create a new session given invalid params' do

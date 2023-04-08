@@ -6,21 +6,23 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Core
-gem 'jwt'
-gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
-gem 'rack-cors'
-gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+gem 'jwt', '2.7.0'
+gem 'pg', '1.4.6'
+gem 'puma', '6.2.1'
+gem 'rack-cors', '2.0.1'
+gem 'rails', '7.0.4.3'
+gem 'bootsnap', require: false
 
 # Security
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '3.1.18'
 
 # JSON
-gem 'alba'
-gem 'oj'
+gem 'alba', '2.2.0'
+gem 'oj', '3.14.2'
+gem 'image_processing', '~> 1.2'
 
 # Sorbet
-gem 'sorbet-rails'
+gem 'sorbet-rails', '0.7.34'
 gem 'sorbet-runtime'
 
 # Others
@@ -30,7 +32,7 @@ group :development, :test do
   gem 'annotate'
   gem 'rubocop', require: false
   gem 'sorbet'
-  gem 'tapioca'
+  gem 'tapioca', require: false
 end
 
 group :test do

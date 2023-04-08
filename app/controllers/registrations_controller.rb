@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 class RegistrationsController < ApplicationController
@@ -79,7 +80,7 @@ class RegistrationsController < ApplicationController
     current_password = params.dig(:user, :current_password)
     new_email = params.dig(:user, :email)
 
-    return false unless @user.can_update_password?(current_password)
+    return false unless current_password.present? && @user.can_update_password?(current_password)
     return false if new_email != @user.email && User.find_by(email: new_email).present?
 
     @user.change_email!(params[:user][:email])

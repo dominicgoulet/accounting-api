@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 class PasswordsController < ApplicationController
@@ -15,7 +16,9 @@ class PasswordsController < ApplicationController
 
   # PATCH /passwords/:reset_password_token
   def update
-    user = User.reset_password_with_token!(params[:reset_password_token], params[:password])
+    user = User.reset_password_with_token!(
+      params[:reset_password_token], params[:password]
+    ) if params[:reset_password_token].present? && params[:password].present?
 
     if user.present?
       sign_in!(user)

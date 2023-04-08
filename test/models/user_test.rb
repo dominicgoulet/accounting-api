@@ -1,3 +1,4 @@
+# typed: ignore
 # frozen_string_literal: true
 
 # == Schema Information
@@ -111,6 +112,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test '#reset_password_with_token! resets password with a valid token and password' do
+    assert @user.send_reset_password_instructions!
+
     refute User.reset_password_with_token!('invalidtoken', '1111')
     refute User.reset_password_with_token!(users(:valid).reset_password_token, '1')
     assert User.reset_password_with_token!(users(:valid).reset_password_token, '1111')
