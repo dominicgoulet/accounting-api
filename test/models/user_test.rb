@@ -75,6 +75,11 @@ class UserTest < ActiveSupport::TestCase
     assert @user.send_new_user_instructions!
   end
 
+  test '.change_email! fails with invalid email' do
+    refute @user.change_email!('darth.vader')
+    refute @user.unconfirmed_email.present?
+  end
+
   test '.change_email! manages unconfirmed_email' do
     assert @user.change_email!('darth.vader2@theempire.org')
     assert @user.unconfirmed_email == 'darth.vader2@theempire.org'
@@ -91,31 +96,5 @@ class UserTest < ActiveSupport::TestCase
   test '.send_reset_password_instructions! sets a new password reset token and returns true' do
     assert @user.send_reset_password_instructions!
     assert @user.reset_password_token.present?
-  end
-
-  # Class methods
-  test '#create_with_random_password returns a new valid User instance' do
-    assert User.create_with_random_password('emperor@theempire.org').valid?
-  end
-
-  test '#find_or_create_with_random_password returns the found user if email is found' do
-    assert User.find_or_create_with_random_password(users(:valid).email) == users(:valid)
-  end
-
-  test '#find_or_create_with_random_password returns a new valid User instance when email is not found' do
-    assert User.find_or_create_with_random_password('emperor@theempire.org').valid?
-  end
-
-  test '#authenticate_with_email_and_password returns the user when email and password are valid' do
-    refute User.authenticate_with_email_and_password(users(:valid).email, 'wrongpassword', '127.0.0.1')
-    assert User.authenticate_with_email_and_password(users(:valid).email, '0000', '127.0.0.1')
-  end
-
-  test '#reset_password_with_token! resets password with a valid token and password' do
-    assert @user.send_reset_password_instructions!
-
-    refute User.reset_password_with_token!('invalidtoken', '1111')
-    refute User.reset_password_with_token!(users(:valid).reset_password_token, '1')
-    assert User.reset_password_with_token!(users(:valid).reset_password_token, '1111')
   end
 end

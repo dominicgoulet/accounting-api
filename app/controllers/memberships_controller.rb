@@ -1,10 +1,12 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 class MembershipsController < ApplicationController
+  extend T::Sig
+
   before_action :set_membership, only: %i[show update destroy]
 
-  # POST /memberships
+  sig { returns(String) }
   def create
     organization = Organization.find_by(id: membership_params[:organization_id])
     user = User.find_by(id: membership_params[:user_id])
@@ -18,7 +20,7 @@ class MembershipsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /memberships/1
+  sig { returns(String) }
   def update
     if @membership.update(membership_params)
       render json: @membership
@@ -27,19 +29,19 @@ class MembershipsController < ApplicationController
     end
   end
 
-  # DELETE /memberships/1
+  sig { void }
   def destroy
     @membership.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  sig { void }
   def set_membership
     @membership = Membership.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
+  sig { returns(ActionController::Parameters) }
   def membership_params
     params.fetch(:membership, {}).permit(:user_id, :organization_id)
   end

@@ -1,54 +1,56 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 class OrganizationsController < ApplicationController
+  extend T::Sig
+
   before_action :set_organization, only: %i[show update destroy]
 
-  # GET /organizations
+  sig { returns(String) }
   def index
-    @organizations = Organization.all
+    organizations = Organization.all
 
-    render json: @organizations
+    render json: OrganizationSerializer.new(organizations).serialize
   end
 
-  # GET /organizations/1
+  sig { returns(String) }
   def show
-    render json: @organization
+    render json: OrganizationSerializer.new(@organization).serialize
   end
 
-  # POST /organizations
+  sig { returns(String) }
   def create
     @organization = Organization.new(organization_params)
 
     if @organization.save
-      render json: @organization, status: :created, location: @organization
+      render json: OrganizationSerializer.new(@organization).serialize, status: :created, location: @organization
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /organizations/1
+  sig { returns(String) }
   def update
     if @organization.update(organization_params)
-      render json: @organization
+      render json: OrganizationSerializer.new(@organization).serialize
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /organizations/1
+  sig { void }
   def destroy
     @organization.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
+  sig { void }
   def set_organization
     @organization = Organization.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
+  sig { returns(ActionController::Parameters) }
   def organization_params
     params.fetch(:organization, {}).permit(:name)
   end

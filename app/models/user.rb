@@ -93,6 +93,7 @@ class User < ApplicationRecord
 
   sig { params(new_email: T.nilable(String)).returns(T::Boolean) }
   def change_email!(new_email)
+    return false unless URI::MailTo::EMAIL_REGEXP.match?(new_email)
     return false if new_email == email
 
     update(
@@ -116,54 +117,5 @@ class User < ApplicationRecord
     UserMailer.new_user(id).deliver_later
 
     true
-  end
-
-  #
-  # Class methods
-  #
-
-  sig { params(email: String, password: String, sign_in_ip: String).returns(T.nilable(User)) }
-  def self.authenticate_with_email_and_password(email, password, sign_in_ip)
-    user = User.find_by(email:)
-    return unless user&.authenticate(password)
-
-    user.update(
-      sign_in_count: user.sign_in_count + 1,
-      current_sign_in_ip: sign_in_ip,
-      current_sign_in_at: Time.zone.now,
-      last_sign_in_at: user.current_sign_in_at,
-      last_sign_in_ip: user.last_sign_in_ip
-    )
-
-    user
-  end
-
-  sig { params(token: String, password: String).returns(T.nilable(User)) }
-  def self.reset_password_with_token!(token, password)
-    user = User.find_by(reset_password_token: token)
-    return unless user&.update(password:)
-
-    user
-  end
-
-  sig { params(email: String).returns(User) }
-  def self.find_or_create_with_random_password(email)
-    User.find_by(email:) || create_with_random_password(email)
-  end
-
-  sig { params(email: String).returns(User) }
-  def self.create_with_random_password(email)
-    user = User.create(
-      email:,
-      password: SecureRandom.urlsafe_base64,
-      confirmation_sent_at: Time.zone.now,
-      confirmation_token: SecureRandom.urlsafe_base64,
-      reset_password_sent_at: Time.zone.now,
-      reset_password_token: SecureRandom.urlsafe_base64
-    )
-
-    UserMailer.invited_user(user.id).deliver_later
-
-    user
   end
 end

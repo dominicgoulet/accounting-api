@@ -1,22 +1,27 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  extend T::Sig
+
   before_action :set_user, only: [:show]
 
-  # GET /api/v1/sessions
+  sig { returns(String) }
   def show
     if signed_in?
-      render json: { user: @user }.to_json
+      render json: { user: SessionSerializer.new(@user).serialize }.to_json
     else
       render json: { success: false }
     end
   end
 
+  sig { returns(String) }
   def create
-    user = User.authenticate_with_email_and_password(
-      params[:email], params[:password], request.remote_ip
-    ) if params[:email].present? && params[:password].present?
+    if params[:email].present? && params[:password].present?
+      user = Session.authenticate_with_email_and_password(
+        params[:email], params[:password], request.remote_ip
+      )
+    end
 
     if user.present?
       sign_in!(user)
@@ -25,17 +30,19 @@ class SessionsController < ApplicationController
     end
   end
 
+  sig { returns(String) }
   def update
     render json: { success: true }
   end
 
+  sig { void }
   def destroy
     sign_out!
-    head :no_content
   end
 
   private
 
+  sig { void }
   def set_user
     @user = current_user
   end

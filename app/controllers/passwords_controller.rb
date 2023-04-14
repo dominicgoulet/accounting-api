@@ -1,8 +1,10 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 class PasswordsController < ApplicationController
-  # POST /passwords
+  extend T::Sig
+
+  sig { returns(String) }
   def create
     user = User.find_by(email: params[:email])
 
@@ -14,18 +16,25 @@ class PasswordsController < ApplicationController
     end
   end
 
-  # PATCH /passwords/:reset_password_token
+  sig { returns(String) }
   def update
-    user = User.reset_password_with_token!(
+    return invalid_params unless params[:reset_password_token].present? && params[:password].present?
+
+    user = Password.reset_password_with_token!(
       params[:reset_password_token], params[:password]
-    ) if params[:reset_password_token].present? && params[:password].present?
+    )
 
     if user.present?
       sign_in!(user)
-    elsif params[:password].present?
-      render json: { error: 'Invalid reset token.' }, status: :unprocessable_entity
     else
-      render json: { error: 'Invalid password' }, status: :unprocessable_entity
+      render json: { error: 'Invalid reset token.' }, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  sig { returns(String) }
+  def invalid_params
+    render json: { error: 'Invalid parameters.' }, status: :unprocessable_entity
   end
 end

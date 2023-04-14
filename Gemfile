@@ -11,15 +11,14 @@ gem 'pg', '1.4.6'
 gem 'puma', '6.2.1'
 gem 'rack-cors', '2.0.1'
 gem 'rails', '7.0.4.3'
-gem 'bootsnap', require: false
 
 # Security
 gem 'bcrypt', '3.1.18'
 
 # JSON
 gem 'alba', '2.2.0'
-gem 'oj', '3.14.2'
 gem 'image_processing', '~> 1.2'
+gem 'oj', '3.14.2'
 
 # Sorbet
 gem 'sorbet-rails', '0.7.34'

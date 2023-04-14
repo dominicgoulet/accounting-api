@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 namespace :sorbet do
   namespace :update do
-    desc "Update Sorbet and Sorbet Rails RBIs."
+    desc 'Update Sorbet and Sorbet Rails RBIs.'
 
     task all: :environment do
       Bundler.with_unbundled_env do
