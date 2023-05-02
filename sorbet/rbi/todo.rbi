@@ -4,11 +4,8 @@
 
 # typed: false
 
-module ::ActionController::API; end
-module ::ActionMailer::Base; end
-module ::ActiveRecord::Base; end
-module ApplicationController::ActiveRecord::RecordNotFound; end
-module JsonWebToken::ActiveSupport::Concern; end
-module JsonWebToken::HashWithIndifferentAccess; end
-module JsonWebToken::JWT; end
-module JsonWebToken::Rails; end
+module T::InterfaceWrapper::Helpers; end
+module T::Private::Abstract::Hooks; end
+module T::Private::Methods::MethodHooks; end
+module T::Private::Methods::Signature; end
+module T::Private::Methods::SingletonMethodHooks; end

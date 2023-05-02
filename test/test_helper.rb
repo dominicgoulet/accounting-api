@@ -1,9 +1,11 @@
 # typed: ignore
 # frozen_string_literal: true
 
-require 'simplecov'
-SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
-SimpleCov.start 'rails'
+unless ENV['NO_COVERAGE']
+  require 'simplecov'
+  SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+  SimpleCov.start 'rails'
+end
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'

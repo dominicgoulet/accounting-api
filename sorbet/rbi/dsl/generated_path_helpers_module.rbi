@@ -9,6 +9,9 @@ module GeneratedPathHelpersModule
   include ::ActionDispatch::Routing::PolymorphicRoutes
 
   sig { params(args: T.untyped).returns(String) }
+  def auth_failure_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def membership_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -22,9 +25,6 @@ module GeneratedPathHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def organizations_path(*args); end
-
-  sig { params(args: T.untyped).returns(String) }
-  def password_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def passwords_path(*args); end

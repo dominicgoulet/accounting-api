@@ -181,6 +181,15 @@ module User::GeneratedAttributeMethods
 end
 
 module User::GeneratedAssociationMethods
+  sig { returns(::UserIdentity::ActiveRecord_Associations_CollectionProxy) }
+  def identities; end
+
+  sig { returns(T::Array[String]) }
+  def identity_ids; end
+
+  sig { params(value: T::Enumerable[::UserIdentity]).void }
+  def identities=(value); end
+
   sig { returns(::Membership::ActiveRecord_Associations_CollectionProxy) }
   def memberships; end
 

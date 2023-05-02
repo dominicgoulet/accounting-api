@@ -40,6 +40,13 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def sessions_url(*args, **kwargs); end
 
+  # Sigs for route /auth/failure(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def auth_failure_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def auth_failure_url(*args, **kwargs); end
+
   # Sigs for route /passwords(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def passwords_path(*args, **kwargs); end
@@ -74,13 +81,6 @@ module GeneratedUrlHelpers
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def registrations_cancel_email_change_url(*args, **kwargs); end
-
-  # Sigs for route /passwords/:id(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def password_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def password_url(*args, **kwargs); end
 
   # Sigs for route /organizations(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }

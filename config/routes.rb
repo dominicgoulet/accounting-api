@@ -2,11 +2,18 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Sessions
   get '/session', to: 'sessions#show'
   patch '/session', to: 'sessions#update'
   delete '/session', to: 'sessions#destroy'
   resources :sessions, only: [:create]
 
+  # Omniauth
+  get 'auth/start/:provider', to: 'omniauth#start'
+  get 'auth/:provider/callback', to: 'omniauth#create'
+  get 'auth/failure', to: 'omniauth#failure'
+
+  # Passwords
   patch '/passwords', to: 'passwords#update'
   resources :passwords, only: [:create]
 
@@ -18,7 +25,6 @@ Rails.application.routes.draw do
   patch '/registrations/accept-invitation', to: 'registrations#accept_invitation'
   patch '/registrations/cancel-email-change', to: 'registrations#cancel_email_change'
 
-  resources :passwords, only: [:create, :update]
   resources :organizations, only: [:index, :show, :create, :update, :destroy]
   resources :memberships, only: [:create, :update, :destroy]
 end

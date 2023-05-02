@@ -6,19 +6,19 @@ class OrganizationsController < ApplicationController
 
   before_action :set_organization, only: %i[show update destroy]
 
-  sig { returns(String) }
+  sig { void }
   def index
     organizations = Organization.all
 
     render json: OrganizationSerializer.new(organizations).serialize
   end
 
-  sig { returns(String) }
+  sig { void }
   def show
     render json: OrganizationSerializer.new(@organization).serialize
   end
 
-  sig { returns(String) }
+  sig { void }
   def create
     @organization = Organization.new(organization_params)
 
@@ -29,25 +29,25 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def update
-    if @organization.update(organization_params)
+    if T.must(@organization).update(organization_params)
       render json: OrganizationSerializer.new(@organization).serialize
     else
-      render json: @organization.errors, status: :unprocessable_entity
+      render json: T.must(@organization).errors, status: :unprocessable_entity
     end
   end
 
   sig { void }
   def destroy
-    @organization.destroy
+    T.must(@organization).destroy
   end
 
   private
 
   sig { void }
   def set_organization
-    @organization = Organization.find(params[:id])
+    @organization = T.let(Organization.find(params[:id]), T.nilable(Organization))
   end
 
   sig { returns(ActionController::Parameters) }

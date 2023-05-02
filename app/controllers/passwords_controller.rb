@@ -4,7 +4,7 @@
 class PasswordsController < ApplicationController
   extend T::Sig
 
-  sig { returns(String) }
+  sig { void }
   def create
     user = User.find_by(email: params[:email])
 
@@ -16,7 +16,7 @@ class PasswordsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def update
     return invalid_params unless params[:reset_password_token].present? && params[:password].present?
 
@@ -33,7 +33,7 @@ class PasswordsController < ApplicationController
 
   private
 
-  sig { returns(String) }
+  sig { void }
   def invalid_params
     render json: { error: 'Invalid parameters.' }, status: :unprocessable_entity
   end

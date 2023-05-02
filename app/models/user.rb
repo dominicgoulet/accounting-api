@@ -32,6 +32,7 @@ class User < ApplicationRecord
   has_secure_password
 
   # Associations
+  has_many :identities, class_name: 'UserIdentity'
   has_many :memberships
   has_many :organizations, through: :memberships
 
@@ -76,7 +77,7 @@ class User < ApplicationRecord
       reset_password_token: SecureRandom.urlsafe_base64
     )
 
-    UserMailer.new_password(id).deliver_later
+    UserMailer.with(user: self).new_password.deliver_later
 
     true
   end
@@ -102,7 +103,7 @@ class User < ApplicationRecord
       confirmation_token: SecureRandom.urlsafe_base64
     )
 
-    UserMailer.change_email(id).deliver_later
+    UserMailer.with(user: self).change_email.deliver_later
 
     true
   end
@@ -114,7 +115,7 @@ class User < ApplicationRecord
       confirmation_token: SecureRandom.urlsafe_base64
     )
 
-    UserMailer.new_user(id).deliver_later
+    UserMailer.with(user: self).new_user.deliver_later
 
     true
   end

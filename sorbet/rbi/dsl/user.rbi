@@ -234,6 +234,20 @@ class User
   end
 
   module GeneratedAssociationMethods
+    # This method is created by ActiveRecord on the `User` class because it declared `has_many :identities`.
+    # 🔗 [Rails guide for `has_many` association](https://guides.rubyonrails.org/association_basics.html#the-has-many-association)
+    sig { returns(::UserIdentity::PrivateCollectionProxy) }
+    def identities; end
+
+    sig { params(value: T::Enumerable[::UserIdentity]).void }
+    def identities=(value); end
+
+    sig { returns(T::Array[T.untyped]) }
+    def identity_ids; end
+
+    sig { params(ids: T::Array[T.untyped]).returns(T::Array[T.untyped]) }
+    def identity_ids=(ids); end
+
     sig { returns(T::Array[T.untyped]) }
     def membership_ids; end
 

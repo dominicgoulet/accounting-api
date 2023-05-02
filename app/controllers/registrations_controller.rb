@@ -7,12 +7,12 @@ class RegistrationsController < ApplicationController
   before_action :authenticate_user!, only: %i[show update cancel_email_change]
   before_action :set_user, only: %i[show update cancel_email_change]
 
-  sig { returns(String) }
+  sig { void }
   def show
     render json: UserSerializer.new(@user).serialize
   end
 
-  sig { returns(String) }
+  sig { void }
   def create
     user = User.create(user_params)
 
@@ -24,16 +24,16 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def update
-    if can_update? && @user.update(user_params)
+    if can_update? && T.must(@user).update(user_params)
       render json: { success: true }
     else
       render json: { error: 'There was an error updating your profile.' }, status: :unprocessable_entity
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def confirm
     user = User.find_by(confirmation_token: params[:confirmation_token])
 
@@ -45,7 +45,7 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def accept_invitation
     user = User.find_by(confirmation_token: params[:confirmation_token])
 
@@ -57,9 +57,9 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def cancel_email_change
-    @user.cancel_change_email!
+    T.must(@user).cancel_change_email!
     render json: { success: true }
   end
 
@@ -67,7 +67,7 @@ class RegistrationsController < ApplicationController
 
   sig { void }
   def set_user
-    @user = current_user
+    @user = T.let(current_user, T.nilable(User))
   end
 
   sig { returns(ActionController::Parameters) }
@@ -82,13 +82,13 @@ class RegistrationsController < ApplicationController
 
   sig { returns(T::Boolean) }
   def can_update?
-    current_password = params.dig(:user, :current_password)
     new_email = params.dig(:user, :email)
+    current_password = params.dig(:user, :current_password)
 
-    return false unless current_password.present? && @user.can_update_password?(current_password)
-    return false if new_email != @user.email && User.find_by(email: new_email).present?
+    return false unless current_password.present? && T.must(@user).can_update_password?(current_password)
+    return false if new_email != T.must(@user).email && User.find_by(email: new_email).present?
 
-    @user.change_email!(params[:user][:email])
+    T.must(@user).change_email!(new_email)
     params[:user].delete(:email)
 
     true

@@ -10,6 +10,12 @@ class ApplicationController < ActionController::API
   sig { returns(T.nilable(User)) }
   attr_reader :current_user
 
+  sig { void }
+  def initialize
+    @current_user = T.let(nil, T.nilable(User))
+    super
+  end
+
   rescue_from ActiveRecord::RecordNotFound do
     render json: { error: 'Record not found.' }, status: :not_found
   end
@@ -36,7 +42,7 @@ class ApplicationController < ActionController::API
     render json: { error: 'Not authorized.' }, status: :unauthorized unless signed_in?
   end
 
-  sig { params(object: Object).returns(String) }
+  sig { params(object: ApplicationRecord).void }
   def render_errors_for(object)
     render json: object.errors.to_json, status: :unprocessable_entity
   end

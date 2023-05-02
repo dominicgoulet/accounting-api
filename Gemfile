@@ -14,6 +14,11 @@ gem 'rails', '7.0.4.3'
 
 # Security
 gem 'bcrypt', '3.1.18'
+gem 'omniauth'
+# gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'repost'
 
 # JSON
 gem 'alba', '2.2.0'
@@ -29,6 +34,8 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'annotate'
+  gem 'guard'
+  gem 'guard-minitest'
   gem 'rubocop', require: false
   gem 'sorbet'
   gem 'tapioca', require: false

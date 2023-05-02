@@ -6,16 +6,16 @@
 
 class UserMailer
   class << self
-    sig { params(user_id: T.untyped).returns(::ActionMailer::MessageDelivery) }
-    def change_email(user_id); end
+    sig { returns(::ActionMailer::MessageDelivery) }
+    def change_email; end
 
-    sig { params(user_id: T.untyped).returns(::ActionMailer::MessageDelivery) }
-    def invited_user(user_id); end
+    sig { returns(::ActionMailer::MessageDelivery) }
+    def invited_user; end
 
-    sig { params(user_id: T.untyped).returns(::ActionMailer::MessageDelivery) }
-    def new_password(user_id); end
+    sig { returns(::ActionMailer::MessageDelivery) }
+    def new_password; end
 
-    sig { params(user_id: T.untyped).returns(::ActionMailer::MessageDelivery) }
-    def new_user(user_id); end
+    sig { returns(::ActionMailer::MessageDelivery) }
+    def new_user; end
   end
 end

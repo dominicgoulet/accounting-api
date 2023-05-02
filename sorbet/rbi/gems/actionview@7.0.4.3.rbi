@@ -211,11 +211,17 @@ class ActionController::Base < ::ActionController::Metal
   # source://actionpack/7.0.4.3/lib/action_controller/metal/redirecting.rb#13
   def raise_on_open_redirects=(val); end
 
+  # source://repost/0.4.1/lib/repost/extend_controller.rb#5
+  def redirect_post(url, params: T.unsafe(nil), options: T.unsafe(nil)); end
+
   # source://activesupport/7.0.4.3/lib/active_support/configurable.rb#113
   def relative_url_root; end
 
   # source://activesupport/7.0.4.3/lib/active_support/configurable.rb#114
   def relative_url_root=(value); end
+
+  # source://repost/0.4.1/lib/repost/extend_controller.rb#5
+  def repost(url, params: T.unsafe(nil), options: T.unsafe(nil)); end
 
   # source://activesupport/7.0.4.3/lib/active_support/configurable.rb#113
   def request_forgery_protection_token; end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   before_action :set_user, only: [:show]
 
-  sig { returns(String) }
+  sig { void }
   def show
     if signed_in?
       render json: { user: SessionSerializer.new(@user).serialize }.to_json
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def create
     if params[:email].present? && params[:password].present?
       user = Session.authenticate_with_email_and_password(
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  sig { returns(String) }
+  sig { void }
   def update
     render json: { success: true }
   end
@@ -44,6 +44,6 @@ class SessionsController < ApplicationController
 
   sig { void }
   def set_user
-    @user = current_user
+    @user = T.let(current_user, T.nilable(User))
   end
 end

@@ -9,6 +9,9 @@ module GeneratedUrlHelpersModule
   include ::ActionDispatch::Routing::PolymorphicRoutes
 
   sig { params(args: T.untyped).returns(String) }
+  def auth_failure_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def membership_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
@@ -22,9 +25,6 @@ module GeneratedUrlHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def organizations_url(*args); end
-
-  sig { params(args: T.untyped).returns(String) }
-  def password_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def passwords_url(*args); end

@@ -4745,6 +4745,100 @@ end
 # source://activesupport//lib/active_support/error_reporter.rb#42
 ActiveSupport::ErrorReporter::SEVERITIES = T.let(T.unsafe(nil), Array)
 
+# Allows you to "listen" to changes in a file system.
+# The evented file updater does not hit disk when checking for updates.
+# Instead, it uses platform-specific file system events to trigger a change
+# in state.
+#
+# The file checker takes an array of files to watch or a hash specifying directories
+# and file extensions to watch. It also takes a block that is called when
+# EventedFileUpdateChecker#execute is run or when EventedFileUpdateChecker#execute_if_updated
+# is run and there have been changes to the file system.
+#
+# Example:
+#
+#     checker = ActiveSupport::EventedFileUpdateChecker.new(["/tmp/foo"]) { puts "changed" }
+#     checker.updated?
+#     # => false
+#     checker.execute_if_updated
+#     # => nil
+#
+#     FileUtils.touch("/tmp/foo")
+#
+#     checker.updated?
+#     # => true
+#     checker.execute_if_updated
+#     # => "changed"
+#
+# source://activesupport//lib/active_support/evented_file_update_checker.rb#35
+class ActiveSupport::EventedFileUpdateChecker
+  # @return [EventedFileUpdateChecker] a new instance of EventedFileUpdateChecker
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#36
+  def initialize(files, dirs = T.unsafe(nil), &block); end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#55
+  def execute; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#60
+  def execute_if_updated; end
+
+  # @return [Boolean]
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#46
+  def updated?; end
+end
+
+# source://activesupport//lib/active_support/evented_file_update_checker.rb#68
+class ActiveSupport::EventedFileUpdateChecker::Core
+  # @return [Core] a new instance of Core
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#71
+  def initialize(files, dirs); end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#129
+  def changed(modified, added, removed); end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#163
+  def common_path(paths); end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#157
+  def directories_to_watch; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#90
+  def finalizer; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#123
+  def normalize_dirs!; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#114
+  def restart; end
+
+  # @return [Boolean]
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#119
+  def restart?; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#103
+  def start; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#110
+  def stop; end
+
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#97
+  def thread_safely; end
+
+  # Returns the value of attribute updated.
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#69
+  def updated; end
+
+  # @return [Boolean]
+  #
+  # source://activesupport//lib/active_support/evented_file_update_checker.rb#135
+  def watching?(file); end
+end
+
 # source://activesupport//lib/active_support/execution_context.rb#4
 module ActiveSupport::ExecutionContext
   class << self
@@ -10160,6 +10254,8 @@ end
 #
 # source://activesupport//lib/active_support/tagged_logging.rb#28
 module ActiveSupport::TaggedLogging
+  extend ::Lumberjack::TaggedLogging::ClassMethods
+
   # source://activesupport//lib/active_support/tagged_logging.rb#95
   def clear_tags!(*_arg0, **_arg1, &_arg2); end
 
@@ -10176,7 +10272,7 @@ module ActiveSupport::TaggedLogging
   def tagged(*tags); end
 
   class << self
-    # source://activesupport//lib/active_support/tagged_logging.rb#81
+    # source://lumberjack/1.2.8/lib/lumberjack/tagged_logging.rb#15
     def new(logger); end
   end
 end

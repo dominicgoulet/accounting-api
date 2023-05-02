@@ -42,7 +42,7 @@ class Organization < ApplicationRecord
     memberships.find_or_create_by(user:).update(level: :owner)
   end
 
-  sig { params(user: User, level: String).returns(T::Boolean) }
+  sig { params(user: User, level: Symbol).returns(T::Boolean) }
   def add_member!(user, level = :member)
     m = memberships.find_or_create_by(user:, level:)
     m.confirm!
@@ -56,7 +56,7 @@ class Organization < ApplicationRecord
   sig { params(user: User).returns(T::Boolean) }
   def promote!(user)
     m = memberships.find_by(user:, level: %i[admin member])
-    return if m.blank?
+    return false if m.blank?
 
     m.update(level: :admin)
   end
@@ -64,7 +64,7 @@ class Organization < ApplicationRecord
   sig { params(user: User).returns(T::Boolean) }
   def demote!(user)
     m = memberships.find_by(user:, level: %i[admin member])
-    return if m.blank?
+    return false if m.blank?
 
     m.update(level: :member)
   end
