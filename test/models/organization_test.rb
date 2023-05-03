@@ -27,7 +27,7 @@ class OrganizationTest < ActiveSupport::TestCase
   end
 
   test 'invalid without a name' do
-    T.must(@organization).name = nil
+    T.must(@organization).name = ''
 
     refute T.must(@organization).valid?
     assert_not_nil T.must(@organization).errors[:name]

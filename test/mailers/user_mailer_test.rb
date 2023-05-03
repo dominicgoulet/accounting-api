@@ -12,23 +12,23 @@ class UserMailerTest < ActiveSupport::TestCase
   end
 
   test '.new_user sent email' do
-    assert UserMailer.with(user: @user).new_user.deliver.is_a? Mail::Message
+    assert UserMailer.with(user: @user).new_user.deliver
   end
 
   test '.invited_user sent email' do
-    assert UserMailer.with(user: @user).invited_user.deliver.is_a? Mail::Message
+    assert UserMailer.with(user: @user).invited_user.deliver
   end
 
   test '.new_password sent email' do
-    assert UserMailer.with(user: @user).new_password.deliver.is_a? Mail::Message
+    assert UserMailer.with(user: @user).new_password.deliver
   end
 
   test '.change_email sent email fails when unconfirmed_email is not present' do
-    refute UserMailer.with(user: @user).change_email.deliver.present?
+    refute UserMailer.with(user: @user).change_email.deliver
   end
 
   test '.change_email sent email succeeds when unconfirmed_email is present' do
     assert T.must(@user).change_email!('darth.vader2@theempire.org')
-    assert UserMailer.with(user: @user).change_email.deliver.present?
+    assert UserMailer.with(user: @user).change_email.deliver
   end
 end

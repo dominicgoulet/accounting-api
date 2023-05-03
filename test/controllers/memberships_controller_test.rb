@@ -9,11 +9,11 @@ class MembershipsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = T.let(users(:valid), T.nilable(User))
     @membership = T.let(memberships(:valid), T.nilable(Membership))
+
+    sign_in!(T.must(@user))
   end
 
   test 'should create membership given valid params' do
-    sign_in!(T.must(@user))
-
     assert_difference('Membership.count') do
       post memberships_url,
            params: {
@@ -29,8 +29,6 @@ class MembershipsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create membership with invalid params' do
-    sign_in!(T.must(@user))
-
     assert_difference('Membership.count', 0) do
       post memberships_url,
            params: {
@@ -46,8 +44,6 @@ class MembershipsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update membership given valid params' do
-    sign_in!(T.must(@user))
-
     patch membership_url(@membership),
           params: {
             membership: {
@@ -56,12 +52,11 @@ class MembershipsControllerTest < ActionDispatch::IntegrationTest
             }
           },
           headers: default_headers
+
     assert_response :success
   end
 
   test 'should not update membership with invalid params' do
-    sign_in!(T.must(@user))
-
     patch membership_url(@membership),
           params: {
             membership: {
@@ -69,12 +64,11 @@ class MembershipsControllerTest < ActionDispatch::IntegrationTest
             }
           },
           headers: default_headers
+
     assert_response :unprocessable_entity
   end
 
   test 'should destroy membership' do
-    sign_in!(T.must(@user))
-
     assert_difference('Membership.count', -1) do
       delete membership_url(@membership),
              headers: default_headers

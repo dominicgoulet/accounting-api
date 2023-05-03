@@ -3,7 +3,7 @@
 
 require 'test_helper'
 
-class OrganizationsControllerTest < ActionDispatch::IntegrationTest
+class ApplicationControllerTest < ActionDispatch::IntegrationTest
   extend T::Sig
 
   #
@@ -20,7 +20,14 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     sign_in!(T.must(@user))
 
     get organization_url(id: 'invalid-id'), headers: default_headers
+
     assert_response :not_found
+  end
+
+  test 'should handle invalid parameters' do
+    patch passwords_url, params: {}
+
+    assert_response :unprocessable_entity
   end
 
   test 'should handle missing parameters' do

@@ -8,19 +8,17 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @user = T.let(users(:valid), T.nilable(User))
-    @organization = organizations(:valid)
+    @organization = T.let(organizations(:valid), T.nilable(Organization))
+
+    sign_in!(T.must(@user))
   end
 
   test 'should get index' do
-    sign_in!(T.must(@user))
-
     get organizations_url, headers: default_headers
     assert_response :success
   end
 
   test 'should create organization given valid params' do
-    sign_in!(T.must(@user))
-
     assert_difference('Organization.count') do
       post organizations_url,
            params: {
@@ -35,8 +33,6 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create organization with invalid params' do
-    sign_in!(T.must(@user))
-
     assert_difference('Organization.count', 0) do
       post organizations_url,
            params: {
@@ -49,15 +45,11 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show organization' do
-    sign_in!(T.must(@user))
-
     get organization_url(@organization), headers: default_headers
     assert_response :success
   end
 
   test 'should update organization given valid params' do
-    sign_in!(T.must(@user))
-
     patch organization_url(@organization),
           params: {
             organization: {
@@ -69,8 +61,6 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not update organization with invalid params' do
-    sign_in!(T.must(@user))
-
     patch organization_url(@organization),
           params: {
             organization: {
@@ -81,8 +71,6 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy organization' do
-    sign_in!(T.must(@user))
-
     assert_difference('Organization.count', -1) do
       delete organization_url(@organization), headers: default_headers
     end

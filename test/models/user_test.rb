@@ -40,7 +40,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'invalid without email' do
-    T.must(@user).email = nil
+    T.must(@user).email = ''
 
     refute T.must(@user).valid?
     assert_not_nil T.must(@user).errors[:email]
