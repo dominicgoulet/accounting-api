@@ -1,10 +1,14 @@
+# typed: strict
 # frozen_string_literal: true
 
 require 'test_helper'
 
 class SessionTest < ActiveSupport::TestCase
+  extend T::Sig
+
+  sig { void }
   def setup
-    @user = users(:valid)
+    @user = T.let(users(:valid), T.nilable(User))
   end
 
   # Class methods

@@ -1,9 +1,11 @@
-# typed: ignore
+# typed: strict
 # frozen_string_literal: true
 
 require 'test_helper'
 
 class OmniauthControllerTest < ActionDispatch::IntegrationTest
+  extend T::Sig
+
   setup do
     OmniAuth.config.test_mode = true
 
@@ -69,6 +71,7 @@ class OmniauthControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  sig { params(provider: Symbol).returns(T::Hash[T.untyped, T.untyped]) }
   def auth_hash(provider)
     {}.merge(
       google_oauth2_auth_hash,
@@ -77,6 +80,7 @@ class OmniauthControllerTest < ActionDispatch::IntegrationTest
     )[provider]
   end
 
+  sig { returns(T::Hash[T.untyped, T.untyped]) }
   def google_oauth2_auth_hash
     {
       google_oauth2: {
@@ -89,6 +93,7 @@ class OmniauthControllerTest < ActionDispatch::IntegrationTest
     }
   end
 
+  sig { returns(T::Hash[T.untyped, T.untyped]) }
   def facebook_auth_hash
     {
       facebook: {
@@ -101,6 +106,7 @@ class OmniauthControllerTest < ActionDispatch::IntegrationTest
     }
   end
 
+  sig { returns(T::Hash[T.untyped, T.untyped]) }
   def invalid_auth_hash
     {
       invalid: {

@@ -7,30 +7,28 @@ ruby '3.1.2'
 
 # Core
 gem 'jwt', '2.7.0'
-gem 'pg', '1.4.6'
-gem 'puma', '6.2.1'
+gem 'pg', '1.5.3'
+gem 'puma', '6.2.2'
 gem 'rack-cors', '2.0.1'
 gem 'rails', '7.0.4.3'
 
 # Security
 gem 'bcrypt', '3.1.18'
-gem 'omniauth'
-# gem 'omniauth-rails_csrf_protection'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem 'repost'
+gem 'omniauth', '2.1.1'
+gem 'omniauth-facebook', '9.0.0'
+gem 'omniauth-google-oauth2', '1.1.1'
+gem 'repost', '0.4.1'
 
 # JSON
-gem 'alba', '2.2.0'
-gem 'image_processing', '~> 1.2'
-gem 'oj', '3.14.2'
+gem 'alba', '2.3.0'
+gem 'oj', '3.14.3'
 
 # Sorbet
 gem 'sorbet-rails', '0.7.34'
-gem 'sorbet-runtime'
+gem 'sorbet-runtime', '0.5.10801'
 
 # Others
-gem 'bootsnap', require: false
+gem 'bootsnap', '1.16.0', require: false
 
 group :development, :test do
   gem 'annotate'

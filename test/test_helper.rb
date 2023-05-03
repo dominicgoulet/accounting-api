@@ -13,25 +13,25 @@ require 'rails/test_help'
 require 'database_cleaner-active_record'
 require 'database_cleaner_support'
 require 'session_helper'
+require 'json_helper'
 
 DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
 
 module ActiveSupport
   class TestCase
+    extend T::Sig
     include DatabaseCleanerSupport
 
-    # parallelize(workers: :number_of_processors)
     fixtures :all
   end
 end
 
 module ActionDispatch
   class IntegrationTest
+    extend T::Sig
     include DatabaseCleanerSupport
 
-    def json_data
-      JSON.parse(response.body).deep_symbolize_keys
-    end
+    fixtures :all
   end
 end

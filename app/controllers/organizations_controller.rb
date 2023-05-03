@@ -4,7 +4,7 @@
 class OrganizationsController < ApplicationController
   extend T::Sig
 
-  before_action :set_organization, only: %i[show update destroy]
+  before_action :authenticate_user!
 
   sig { void }
   def index
@@ -15,43 +15,51 @@ class OrganizationsController < ApplicationController
 
   sig { void }
   def show
-    render json: OrganizationSerializer.new(@organization).serialize
+    render json: OrganizationSerializer.new(current_organization).serialize
   end
 
   sig { void }
   def create
-    @organization = Organization.new(organization_params)
+    organization = Organization.new(organization_params.as_json)
 
-    if @organization.save
-      render json: OrganizationSerializer.new(@organization).serialize, status: :created, location: @organization
+    if organization.save
+      render json: OrganizationSerializer.new(organization).serialize, status: :created, location: organization
     else
-      render json: @organization.errors, status: :unprocessable_entity
+      render_errors_for organization
     end
   end
 
   sig { void }
   def update
-    if T.must(@organization).update(organization_params)
-      render json: OrganizationSerializer.new(@organization).serialize
+    if T.must(current_organization).update(organization_params.as_json)
+      render json: OrganizationSerializer.new(current_organization).serialize
     else
-      render json: T.must(@organization).errors, status: :unprocessable_entity
+      render_errors_for T.must(current_organization)
     end
   end
 
   sig { void }
   def destroy
-    T.must(@organization).destroy
+    T.must(current_organization).destroy
   end
 
   private
 
-  sig { void }
-  def set_organization
-    @organization = T.let(Organization.find(params[:id]), T.nilable(Organization))
+  sig { returns(T.nilable(Organization)) }
+  def current_organization
+    @current_organization ||= T.let(Organization.find(params[:id]), T.nilable(Organization))
   end
 
-  sig { returns(ActionController::Parameters) }
+  #
+  # OrganizationParams
+  #
+
+  class OrganizationParams < T::Struct
+    const :name, T.nilable(String)
+  end
+
+  sig { returns(OrganizationParams) }
   def organization_params
-    params.fetch(:organization, {}).permit(:name)
+    TypedParams[OrganizationParams].new.extract!(params.fetch(:organization))
   end
 end

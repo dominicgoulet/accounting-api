@@ -4,24 +4,20 @@
 class SessionsController < ApplicationController
   extend T::Sig
 
-  before_action :set_user, only: [:show]
+  before_action :authenticate_user!, only: %i[show update destroy]
 
   sig { void }
   def show
-    if signed_in?
-      render json: { user: SessionSerializer.new(@user).serialize }.to_json
-    else
-      render json: { success: false }
-    end
+    render json: SessionSerializer.new(T.must(current_user)).serialize
   end
 
   sig { void }
   def create
-    if params[:email].present? && params[:password].present?
-      user = Session.authenticate_with_email_and_password(
-        params[:email], params[:password], request.remote_ip
-      )
-    end
+    user = Session.authenticate_with_email_and_password(
+      session_params.email,
+      session_params.password,
+      request.remote_ip
+    )
 
     if user.present?
       sign_in!(user)
@@ -42,8 +38,17 @@ class SessionsController < ApplicationController
 
   private
 
-  sig { void }
-  def set_user
-    @user = T.let(current_user, T.nilable(User))
+  #
+  # SessionParams
+  #
+
+  class SessionParams < T::Struct
+    const :email, String
+    const :password, String
+  end
+
+  sig { returns(SessionParams) }
+  def session_params
+    TypedParams[SessionParams].new.extract!(params)
   end
 end

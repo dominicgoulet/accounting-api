@@ -26,6 +26,7 @@
 #  updated_at             :datetime         not null
 #
 class UserSerializer
+  extend T::Sig
   include Alba::Resource
 
   root_key :user

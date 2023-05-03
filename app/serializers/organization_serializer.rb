@@ -13,6 +13,7 @@
 #  updated_at         :datetime         not null
 #
 class OrganizationSerializer
+  extend T::Sig
   include Alba::Resource
 
   root_key :organization

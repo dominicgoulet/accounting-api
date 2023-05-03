@@ -49,6 +49,7 @@ class ActionMailbox::InboundEmail
   def typed_status(); end
 
   def typed_status=(value); end
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 class ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation
@@ -56,14 +57,23 @@ class ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation
   include ::ActionMailbox::InboundEmail::GeneratedRelationMethods
 end
 
+class ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation
+end
+
 class ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionMailbox::InboundEmail::GeneratedRelationMethods
 end
 
+class ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActionMailbox::InboundEmail::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionMailbox::InboundEmail::GeneratedRelationMethods
+end
+
+class ActionMailbox::InboundEmail::ActiveRecord_Relation
 end
 
 module ActionMailbox::InboundEmail::GeneratedAttributeMethods
@@ -86,9 +96,16 @@ class ActionMailbox::InboundEmail::Status
   extend ::T::Helpers
 end
 
+class ActionMailbox::Record
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActionMailbox::Record::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionMailbox::Record::GeneratedRelationMethods
+end
+
+class ActionMailbox::Record::ActiveRecord_AssociationRelation
 end
 
 class ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy
@@ -96,9 +113,15 @@ class ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy
   include ::ActionMailbox::Record::GeneratedRelationMethods
 end
 
+class ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActionMailbox::Record::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionMailbox::Record::GeneratedRelationMethods
+end
+
+class ActionMailbox::Record::ActiveRecord_Relation
 end
 
 module ActionMailbox::Record::GeneratedAttributeMethods
@@ -113,6 +136,8 @@ module ActionMailbox::Record::GeneratedRelationMethods
 end
 
 class ActionMailer::Base
+  include ::ActionDispatch::Routing::UrlFor
+  include ::ActionDispatch::Routing::PolymorphicRoutes
   include ::AbstractController::UrlFor
   include ::ActionDispatch::Routing::RouteSet::MountedHelpers
   def default_url_options(); end
@@ -143,10 +168,17 @@ class ActionMailer::Parameterized::MessageDelivery
   RUBYGEMS_ACTIVATION_MONITOR = ::T.let(nil, ::T.untyped)
 end
 
+class ActionText::EncryptedRichText
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActionText::EncryptedRichText::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::RichText::GeneratedRelationMethods
   include ::ActionText::EncryptedRichText::GeneratedRelationMethods
+end
+
+class ActionText::EncryptedRichText::ActiveRecord_AssociationRelation
 end
 
 class ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy
@@ -155,10 +187,16 @@ class ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy
   include ::ActionText::EncryptedRichText::GeneratedRelationMethods
 end
 
+class ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActionText::EncryptedRichText::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::RichText::GeneratedRelationMethods
   include ::ActionText::EncryptedRichText::GeneratedRelationMethods
+end
+
+class ActionText::EncryptedRichText::ActiveRecord_Relation
 end
 
 module ActionText::EncryptedRichText::GeneratedAttributeMethods
@@ -169,9 +207,16 @@ module ActionText::EncryptedRichText::GeneratedRelationMethods
   extend ::Mutex_m
 end
 
+class ActionText::Record
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActionText::Record::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::Record::GeneratedRelationMethods
+end
+
+class ActionText::Record::ActiveRecord_AssociationRelation
 end
 
 class ActionText::Record::ActiveRecord_Associations_CollectionProxy
@@ -179,9 +224,15 @@ class ActionText::Record::ActiveRecord_Associations_CollectionProxy
   include ::ActionText::Record::GeneratedRelationMethods
 end
 
+class ActionText::Record::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActionText::Record::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::Record::GeneratedRelationMethods
+end
+
+class ActionText::Record::ActiveRecord_Relation
 end
 
 module ActionText::Record::GeneratedAttributeMethods
@@ -195,9 +246,16 @@ module ActionText::Record::GeneratedRelationMethods
   extend ::Mutex_m
 end
 
+class ActionText::RichText
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActionText::RichText::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::RichText::GeneratedRelationMethods
+end
+
+class ActionText::RichText::ActiveRecord_AssociationRelation
 end
 
 class ActionText::RichText::ActiveRecord_Associations_CollectionProxy
@@ -205,9 +263,15 @@ class ActionText::RichText::ActiveRecord_Associations_CollectionProxy
   include ::ActionText::RichText::GeneratedRelationMethods
 end
 
+class ActionText::RichText::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActionText::RichText::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActionText::RichText::GeneratedRelationMethods
+end
+
+class ActionText::RichText::ActiveRecord_Relation
 end
 
 module ActionText::RichText::GeneratedAttributeMethods
@@ -235,6 +299,7 @@ end
 
 class ActiveRecord::Base
   extend ::SorbetRails::CustomFinderMethods
+  extend ::SorbetRails::PluckToTStruct
   def self.inherited(child); end
 
   def self.sbr_old_inherited(child_class); end
@@ -1064,6 +1129,8 @@ module ActiveRecord::Enum
 
   def old_enum(name=T.unsafe(nil), values=T.unsafe(nil), **options); end
 
+  def typed_enum(*args, **arg, &blk); end
+
   def typed_enum_reflections(&blk); end
   SR_ENUM_KEYWORDS = ::T.let(nil, ::T.untyped)
 end
@@ -1084,6 +1151,10 @@ module ActiveRecord::Enum
   extend ::T::Sig
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class ActiveRecord::InternalMetadata
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 module ActiveRecord::InternalMetadata::GeneratedAttributeMethods
@@ -1134,6 +1205,11 @@ end
 
 class ActiveRecord::Relation
   include ::SorbetRails::CustomFinderMethods
+  include ::SorbetRails::PluckToTStruct
+end
+
+class ActiveRecord::SchemaMigration
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 module ActiveRecord::SchemaMigration::GeneratedAttributeMethods
@@ -1165,9 +1241,16 @@ class ActiveRecordOverrides
   extend ::Singleton::SingletonClassMethods
 end
 
+class ActiveStorage::Attachment
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActiveStorage::Attachment::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Attachment::GeneratedRelationMethods
+end
+
+class ActiveStorage::Attachment::ActiveRecord_AssociationRelation
 end
 
 class ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy
@@ -1175,9 +1258,15 @@ class ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy
   include ::ActiveStorage::Attachment::GeneratedRelationMethods
 end
 
+class ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActiveStorage::Attachment::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Attachment::GeneratedRelationMethods
+end
+
+class ActiveStorage::Attachment::ActiveRecord_Relation
 end
 
 module ActiveStorage::Attachment::GeneratedAttributeMethods
@@ -1188,9 +1277,16 @@ module ActiveStorage::Attachment::GeneratedRelationMethods
   extend ::Mutex_m
 end
 
+class ActiveStorage::Blob
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActiveStorage::Blob::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Blob::GeneratedRelationMethods
+end
+
+class ActiveStorage::Blob::ActiveRecord_AssociationRelation
 end
 
 class ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy
@@ -1198,9 +1294,15 @@ class ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy
   include ::ActiveStorage::Blob::GeneratedRelationMethods
 end
 
+class ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActiveStorage::Blob::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Blob::GeneratedRelationMethods
+end
+
+class ActiveStorage::Blob::ActiveRecord_Relation
 end
 
 module ActiveStorage::Blob::GeneratedAttributeMethods
@@ -1211,9 +1313,16 @@ module ActiveStorage::Blob::GeneratedRelationMethods
   extend ::Mutex_m
 end
 
+class ActiveStorage::Record
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActiveStorage::Record::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Record::GeneratedRelationMethods
+end
+
+class ActiveStorage::Record::ActiveRecord_AssociationRelation
 end
 
 class ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy
@@ -1221,9 +1330,15 @@ class ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy
   include ::ActiveStorage::Record::GeneratedRelationMethods
 end
 
+class ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActiveStorage::Record::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::Record::GeneratedRelationMethods
+end
+
+class ActiveStorage::Record::ActiveRecord_Relation
 end
 
 module ActiveStorage::Record::GeneratedAttributeMethods
@@ -1258,9 +1373,16 @@ end
 class ActiveStorage::Service::DiskService
 end
 
+class ActiveStorage::VariantRecord
+  RelationType = ::T.let(nil, ::T.untyped)
+end
+
 class ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::VariantRecord::GeneratedRelationMethods
+end
+
+class ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation
 end
 
 class ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy
@@ -1268,9 +1390,15 @@ class ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy
   include ::ActiveStorage::VariantRecord::GeneratedRelationMethods
 end
 
+class ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy
+end
+
 class ActiveStorage::VariantRecord::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::ActiveStorage::VariantRecord::GeneratedRelationMethods
+end
+
+class ActiveStorage::VariantRecord::ActiveRecord_Relation
 end
 
 module ActiveStorage::VariantRecord::GeneratedAttributeMethods
@@ -1298,6 +1426,8 @@ end
 
 class ActiveSupport::TestCase
   extend ::Rails::LineFiltering
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 class Addrinfo
@@ -1380,6 +1510,10 @@ end
 
 module ApplicationRecord::GeneratedRelationMethods
   extend ::Mutex_m
+end
+
+class ApplicationRecordErrorSerializer
+  def encode(hash); end
 end
 
 class Array
@@ -4812,6 +4946,11 @@ DRbObject = DRb::DRbObject
 
 DRbUndumped = DRb::DRbUndumped
 
+module DatabaseCleanerSupport
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
 class Date
   def compare_without_coercion(arg); end
 
@@ -6083,9 +6222,29 @@ end
 module GeneratedUrlHelpers
   def _routes(); end
 
-  def rails_blob_path(*args); end
+  def auth_failure_path(*args); end
 
-  def rails_blob_url(*args); end
+  def auth_failure_url(*args); end
+
+  def membership_path(*args); end
+
+  def membership_url(*args); end
+
+  def memberships_path(*args); end
+
+  def memberships_url(*args); end
+
+  def organization_path(*args); end
+
+  def organization_url(*args); end
+
+  def organizations_path(*args); end
+
+  def organizations_url(*args); end
+
+  def passwords_path(*args); end
+
+  def passwords_url(*args); end
 
   def rails_info_path(*args); end
 
@@ -6103,17 +6262,29 @@ module GeneratedUrlHelpers
 
   def rails_mailers_url(*args); end
 
-  def rails_representation_path(*args); end
+  def registrations_accept_invitation_path(*args); end
 
-  def rails_representation_url(*args); end
+  def registrations_accept_invitation_url(*args); end
 
-  def rails_storage_proxy_path(*args); end
+  def registrations_cancel_email_change_path(*args); end
 
-  def rails_storage_proxy_url(*args); end
+  def registrations_cancel_email_change_url(*args); end
 
-  def rails_storage_redirect_path(*args); end
+  def registrations_confirm_path(*args); end
 
-  def rails_storage_redirect_url(*args); end
+  def registrations_confirm_url(*args); end
+
+  def registrations_path(*args); end
+
+  def registrations_url(*args); end
+
+  def session_path(*args); end
+
+  def session_url(*args); end
+
+  def sessions_path(*args); end
+
+  def sessions_url(*args); end
 end
 
 module GeneratedUrlHelpers
@@ -6288,6 +6459,7 @@ class IPAddr
 end
 
 module ITypeAssert
+  extend ::T::Sig
   extend ::T::Private::Abstract::Hooks
   extend ::T::InterfaceWrapper::Helpers
   extend ::T::Private::Methods::MethodHooks
@@ -6323,10 +6495,6 @@ end
 
 class JSON::Ext::Parser
   def initialize(*arg); end
-end
-
-module JSON
-  def self.load_file(filespec, opts=T.unsafe(nil)); end
 end
 
 module JsonWebToken
@@ -6392,6 +6560,7 @@ class Membership
   def autosave_associated_records_for_organization(*args); end
 
   def autosave_associated_records_for_user(*args); end
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 class Membership::ActiveRecord_AssociationRelation
@@ -6399,14 +6568,23 @@ class Membership::ActiveRecord_AssociationRelation
   include ::Membership::GeneratedRelationMethods
 end
 
+class Membership::ActiveRecord_AssociationRelation
+end
+
 class Membership::ActiveRecord_Associations_CollectionProxy
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::Membership::GeneratedRelationMethods
 end
 
+class Membership::ActiveRecord_Associations_CollectionProxy
+end
+
 class Membership::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::Membership::GeneratedRelationMethods
+end
+
+class Membership::ActiveRecord_Relation
 end
 
 module Membership::GeneratedAssociationMethods
@@ -6430,6 +6608,14 @@ end
 class Membership
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class MembershipSerializer
+  def encode(hash); end
+end
+
+class MembershipsController::MembershipParams
+  def self.inherited(s); end
 end
 
 class MessagePack::ExtensionValue
@@ -6758,9 +6944,13 @@ end
 
 Net::HTTPFatalErrorCode = Net::HTTPClientError
 
-Net::HTTPInformation::EXCEPTION_TYPE = Net::HTTPError
+class Net::HTTPInformation
+end
 
-Net::HTTPInformationCode = Net::HTTPInformation
+Net::HTTPInformationCode::EXCEPTION_TYPE = Net::HTTPError
+
+class Net::HTTPInformation
+end
 
 class Net::HTTPLoopDetected
   HAS_BODY = ::T.let(nil, ::T.untyped)
@@ -6855,18 +7045,6 @@ Net::NetPrivate::HTTPRequest = Net::HTTPRequest
 class NilClass
   include ::JSON::Ext::Generator::GeneratorMethods::NilClass
   def to_d(); end
-end
-
-module NinetyfourApi
-end
-
-class NinetyfourApi::Application
-end
-
-class NinetyfourApi::Application
-end
-
-module NinetyfourApi
 end
 
 class NoMatchingPatternKeyError
@@ -7504,58 +7682,6 @@ class OpenStruct
   VERSION = ::T.let(nil, ::T.untyped)
 end
 
-class OpenURI::Buffer
-  def <<(str); end
-
-  def io(); end
-
-  def size(); end
-  StringMax = ::T.let(nil, ::T.untyped)
-end
-
-class OpenURI::Buffer
-end
-
-class OpenURI::HTTPError
-  def initialize(message, io); end
-end
-
-class OpenURI::HTTPRedirect
-  def initialize(message, io, uri); end
-end
-
-module OpenURI::Meta
-  def content_type_parse(); end
-
-  def meta_add_field(name, value); end
-
-  def meta_add_field2(name, values); end
-
-  def meta_setup_encoding(); end
-  RE_LWS = ::T.let(nil, ::T.untyped)
-  RE_PARAMETERS = ::T.let(nil, ::T.untyped)
-  RE_QUOTED_STRING = ::T.let(nil, ::T.untyped)
-  RE_TOKEN = ::T.let(nil, ::T.untyped)
-end
-
-module OpenURI::Meta
-  def self.init(obj, src=T.unsafe(nil)); end
-end
-
-module OpenURI
-  def self.check_options(options); end
-
-  def self.open_http(buf, target, proxy, options); end
-
-  def self.open_loop(uri, options); end
-
-  def self.open_uri(name, *rest); end
-
-  def self.redirectable?(uri1, uri2); end
-
-  def self.scan_open_optional_arguments(*rest); end
-end
-
 class OptionParser
   def additional_message(typ, opt); end
 
@@ -7583,6 +7709,7 @@ class Organization
   def validate_associated_records_for_memberships(*args); end
 
   def validate_associated_records_for_users(*args); end
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 class Organization::ActiveRecord_AssociationRelation
@@ -7590,14 +7717,23 @@ class Organization::ActiveRecord_AssociationRelation
   include ::Organization::GeneratedRelationMethods
 end
 
+class Organization::ActiveRecord_AssociationRelation
+end
+
 class Organization::ActiveRecord_Associations_CollectionProxy
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::Organization::GeneratedRelationMethods
 end
 
+class Organization::ActiveRecord_Associations_CollectionProxy
+end
+
 class Organization::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::Organization::GeneratedRelationMethods
+end
+
+class Organization::ActiveRecord_Relation
 end
 
 module Organization::GeneratedAttributeMethods
@@ -7611,6 +7747,14 @@ end
 class Organization
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class OrganizationSerializer
+  def encode(hash); end
+end
+
+class OrganizationsController::OrganizationParams
+  def self.inherited(s); end
 end
 
 class PP
@@ -8646,6 +8790,14 @@ end
 class Password
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class PasswordsController::RecoverPasswordParams
+  def self.inherited(s); end
+end
+
+class PasswordsController::ResetPasswordParams
+  def self.inherited(s); end
 end
 
 class Pathname
@@ -12021,6 +12173,14 @@ class Registration
   extend ::T::Private::Methods::SingletonMethodHooks
 end
 
+class RegistrationsController::ConfirmationParams
+  def self.inherited(s); end
+end
+
+class RegistrationsController::UserParams
+  def self.inherited(s); end
+end
+
 class Ripper
   def column(); end
 
@@ -12067,8 +12227,6 @@ class Ripper
   EXPR_MID = ::T.let(nil, ::T.untyped)
   EXPR_NONE = ::T.let(nil, ::T.untyped)
   EXPR_VALUE = ::T.let(nil, ::T.untyped)
-  PARSER_EVENT_TABLE = ::T.let(nil, ::T.untyped)
-  SCANNER_EVENT_TABLE = ::T.let(nil, ::T.untyped)
   Version = ::T.let(nil, ::T.untyped)
 end
 
@@ -12611,6 +12769,14 @@ class Session
   extend ::T::Private::Methods::SingletonMethodHooks
 end
 
+class SessionSerializer
+  def encode(hash); end
+end
+
+class SessionsController::SessionParams
+  def self.inherited(s); end
+end
+
 class Set
   def ==(other); end
 
@@ -12927,10 +13093,12 @@ module SorbetRails::ModelUtils
 end
 
 module SorbetRails::PluckToTStruct
+  def pluck_to_tstruct(*args, **arg, &blk); end
   NILCLASS_STRING = ::T.let(nil, ::T.untyped)
 end
 
 module SorbetRails::PluckToTStruct
+  extend ::T::Sig
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
 end
@@ -13096,6 +13264,7 @@ class Symbol
 end
 
 class TA
+  extend ::T::Sig
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
 end
@@ -13179,10 +13348,6 @@ module URI
 end
 
 class URI::FTP
-  def buffer_open(buf, proxy, options); end
-end
-
-class URI::FTP
   def self.new2(user, password, host, port, path, typecode=T.unsafe(nil), arg_check=T.unsafe(nil)); end
 end
 
@@ -13200,8 +13365,6 @@ end
 
 class URI::HTTP
   def authority(); end
-
-  def buffer_open(buf, proxy, options); end
 
   def origin(); end
 end
@@ -13268,8 +13431,6 @@ module URI
 
   def self.get_encoding(label); end
 
-  def self.open(name, *rest, &block); end
-
   def self.register_scheme(scheme, klass); end
 end
 
@@ -13301,6 +13462,7 @@ class User
   def validate_associated_records_for_memberships(*args); end
 
   def validate_associated_records_for_organizations(*args); end
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 class User::ActiveRecord_AssociationRelation
@@ -13308,14 +13470,23 @@ class User::ActiveRecord_AssociationRelation
   include ::User::GeneratedRelationMethods
 end
 
+class User::ActiveRecord_AssociationRelation
+end
+
 class User::ActiveRecord_Associations_CollectionProxy
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::User::GeneratedRelationMethods
 end
 
+class User::ActiveRecord_Associations_CollectionProxy
+end
+
 class User::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::User::GeneratedRelationMethods
+end
+
+class User::ActiveRecord_Relation
 end
 
 module User::GeneratedAttributeMethods
@@ -13333,6 +13504,7 @@ end
 
 class UserIdentity
   def autosave_associated_records_for_user(*args); end
+  RelationType = ::T.let(nil, ::T.untyped)
 end
 
 class UserIdentity::ActiveRecord_AssociationRelation
@@ -13340,14 +13512,23 @@ class UserIdentity::ActiveRecord_AssociationRelation
   include ::UserIdentity::GeneratedRelationMethods
 end
 
+class UserIdentity::ActiveRecord_AssociationRelation
+end
+
 class UserIdentity::ActiveRecord_Associations_CollectionProxy
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::UserIdentity::GeneratedRelationMethods
 end
 
+class UserIdentity::ActiveRecord_Associations_CollectionProxy
+end
+
 class UserIdentity::ActiveRecord_Relation
   include ::ActiveRecord::Delegation::ClassSpecificRelation
   include ::UserIdentity::GeneratedRelationMethods
+end
+
+class UserIdentity::ActiveRecord_Relation
 end
 
 module UserIdentity::GeneratedAssociationMethods
@@ -13367,6 +13548,10 @@ end
 class UserMailer
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class UserSerializer
+  def encode(hash); end
 end
 
 module Warning

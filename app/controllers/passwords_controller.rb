@@ -6,7 +6,7 @@ class PasswordsController < ApplicationController
 
   sig { void }
   def create
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: reset_password_params.email)
 
     if user.present?
       user.send_reset_password_instructions!
@@ -18,10 +18,9 @@ class PasswordsController < ApplicationController
 
   sig { void }
   def update
-    return invalid_params unless params[:reset_password_token].present? && params[:password].present?
-
     user = Password.reset_password_with_token!(
-      params[:reset_password_token], params[:password]
+      recover_password_params.reset_password_token,
+      recover_password_params.password
     )
 
     if user.present?
@@ -33,8 +32,30 @@ class PasswordsController < ApplicationController
 
   private
 
-  sig { void }
-  def invalid_params
-    render json: { error: 'Invalid parameters.' }, status: :unprocessable_entity
+  #
+  # ResetPasswordParams
+  #
+
+  class ResetPasswordParams < T::Struct
+    const :email, String
+  end
+
+  sig { returns(ResetPasswordParams) }
+  def reset_password_params
+    TypedParams[ResetPasswordParams].new.extract!(params)
+  end
+
+  #
+  # RecoverPasswordParams
+  #
+
+  class RecoverPasswordParams < T::Struct
+    const :reset_password_token, String
+    const :password, String
+  end
+
+  sig { returns(RecoverPasswordParams) }
+  def recover_password_params
+    TypedParams[RecoverPasswordParams].new.extract!(params)
   end
 end

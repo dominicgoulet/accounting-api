@@ -1,12 +1,14 @@
-# typed: ignore
+# typed: strict
 # frozen_string_literal: true
 
 require 'test_helper'
 
 class RegistrationsControllerTest < ActionDispatch::IntegrationTest
+  extend T::Sig
+
   setup do
-    @user = users(:valid)
-    sign_in!(@user)
+    @user = T.let(users(:valid), T.nilable(User))
+    sign_in!(T.must(@user))
   end
 
   test 'should get current user if signed_in?' do
@@ -21,7 +23,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not create a new user given invalid params' do
-    post '/registrations', params: { user: {} } # , headers: default_headers
+    post '/registrations', params: { user: { email: '' } } # , headers: default_headers
     assert_response :unprocessable_entity
   end
 
@@ -32,12 +34,14 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not update current user given invalid params' do
-    patch '/registrations', headers: default_headers
+    patch '/registrations', params: { user: { current_password: '0000', password: '1' } },
+                            headers: default_headers
     assert_response :unprocessable_entity
   end
 
   test 'should confirm for current user given valid confirmation token' do
-    patch '/registrations/confirm', params: { confirmation_token: @user.confirmation_token }, headers: default_headers
+    patch '/registrations/confirm', params: { confirmation_token: T.must(@user).confirmation_token },
+                                    headers: default_headers
     assert_response :ok
   end
 
@@ -47,7 +51,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should accept invitation for current user given valid confirmation token' do
-    patch '/registrations/accept-invitation', params: { confirmation_token: @user.confirmation_token },
+    patch '/registrations/accept-invitation', params: { confirmation_token: T.must(@user).confirmation_token },
                                               headers: default_headers
     assert_response :ok
   end

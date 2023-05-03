@@ -55,6 +55,8 @@ class User < ApplicationRecord
   sig { returns(T::Boolean) }
   def confirm!
     if unconfirmed_email.present?
+      return false if User.find_by(email: unconfirmed_email)
+
       update(
         confirmed_at: Time.zone.now,
         email: unconfirmed_email,
@@ -96,6 +98,7 @@ class User < ApplicationRecord
   def change_email!(new_email)
     return false unless URI::MailTo::EMAIL_REGEXP.match?(new_email)
     return false if new_email == email
+    return false if User.find_by(email: new_email)
 
     update(
       unconfirmed_email: new_email,

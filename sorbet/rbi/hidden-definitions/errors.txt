@@ -63,14 +63,6 @@
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
-# wrong constant name <top>
-# 
-#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                       ^^^^^^^^^^
-# wrong constant name <top>
-# 
-#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                       ^^^^^^^^^^
 # uninitialized constant Abbrev
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -177,6 +169,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionDispatch::IntegrationTest::ResponseAssertions
+# uninitialized constant ActionDispatch::IntegrationTest::SECRET_KEY
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActionDispatch::IntegrationTest::SETUP_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -225,6 +221,18 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActionMailbox::InboundEmail::CALLBACKS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -289,6 +297,10 @@
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::ClassMethods
 #                ActionMailbox::InboundEmail::ClassMethods
 #                ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -341,6 +353,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -348,6 +364,10 @@
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionMailbox::InboundEmail::ClassMethods
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -400,6 +420,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -407,6 +431,10 @@
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Relation::ClassMethods
 #                ActionMailbox::InboundEmail::ClassMethods
 #                ActionMailbox::InboundEmail::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -459,6 +487,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # undefined singleton method `sealed_subclasses' for `ActionMailbox::InboundEmail::Status'
 # 
 #           method = klass.singleton_method(name)
@@ -471,6 +503,72 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionMailbox::Record::Callbacks
+#                ActionMailbox::Callbacks
+#                ActionMailbox::Record::Callback
+# uninitialized constant ActionMailbox::Record::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# wrong constant name <Class:GeneratedRelationMethods>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionMailbox::Record::MinimumLengthError
+# uninitialized constant ActionMailbox::Record::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionMailbox::Record::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -478,6 +576,10 @@
 # Did you mean?  ActionMailbox::Record::ActiveRecord_AssociationRelation::ClassMethods
 #                ActionMailbox::Record::ClassMethods
 #                ActionMailbox::Record::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -530,6 +632,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionMailbox::Record::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -537,6 +643,10 @@
 # Did you mean?  ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionMailbox::Record::ClassMethods
 #                ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -589,6 +699,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionMailbox::Record::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -596,6 +710,10 @@
 # Did you mean?  ActionMailbox::Record::ActiveRecord_Relation::ClassMethods
 #                ActionMailbox::Record::ClassMethods
 #                ActionMailbox::Record::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -652,6 +770,10 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActionMailer::Base::CALLBACK_FILTER_TYPES
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -699,6 +821,67 @@
 #     ::Object.const_get(n)
 #             ^^^^^^^^^^
 # Did you mean?  VersionGem
+# uninitialized constant ActionText::EncryptedRichText::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::EncryptedRichText::Callbacks
+#                ActionText::EncryptedRichText::Callback
+# uninitialized constant ActionText::EncryptedRichText::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActionText::EncryptedRichText::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::EncryptedRichText::MinimumLengthError
+# uninitialized constant ActionText::EncryptedRichText::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::EncryptedRichText::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -706,6 +889,10 @@
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_AssociationRelation::ClassMethods
 #                ActionText::EncryptedRichText::ClassMethods
 #                ActionText::EncryptedRichText::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -758,6 +945,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -765,6 +956,10 @@
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionText::EncryptedRichText::ClassMethods
 #                ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -817,6 +1012,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -824,6 +1023,10 @@
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_Relation::ClassMethods
 #                ActionText::EncryptedRichText::ClassMethods
 #                ActionText::EncryptedRichText::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -876,6 +1079,75 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::EncryptedRichText::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::Record::Callbacks
+#                ActionText::Record::Callback
+# uninitialized constant ActionText::Record::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# wrong constant name <Class:GeneratedRelationMethods>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::Record::MinimumLengthError
+# uninitialized constant ActionText::Record::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::Record::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -883,6 +1155,10 @@
 # Did you mean?  ActionText::Record::ActiveRecord_AssociationRelation::ClassMethods
 #                ActionText::Record::ClassMethods
 #                ActionText::Record::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -935,6 +1211,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::Record::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -942,6 +1222,10 @@
 # Did you mean?  ActionText::Record::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionText::Record::ClassMethods
 #                ActionText::Record::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -994,6 +1278,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::Record::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1001,6 +1289,10 @@
 # Did you mean?  ActionText::Record::ActiveRecord_Relation::ClassMethods
 #                ActionText::Record::ClassMethods
 #                ActionText::Record::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1057,6 +1349,71 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::RichText::Callbacks
+#                ActionText::RichText::Callback
+# uninitialized constant ActionText::RichText::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActionText::RichText::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionText::RichText::MinimumLengthError
+# uninitialized constant ActionText::RichText::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActionText::RichText::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1064,6 +1421,10 @@
 # Did you mean?  ActionText::RichText::ActiveRecord_AssociationRelation::ClassMethods
 #                ActionText::RichText::ClassMethods
 #                ActionText::RichText::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1116,6 +1477,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::RichText::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1123,6 +1488,10 @@
 # Did you mean?  ActionText::RichText::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionText::RichText::ClassMethods
 #                ActionText::RichText::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1175,6 +1544,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::RichText::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1182,6 +1555,10 @@
 # Did you mean?  ActionText::RichText::ActiveRecord_Relation::ClassMethods
 #                ActionText::RichText::ClassMethods
 #                ActionText::RichText::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -1234,6 +1611,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionText::RichText::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActionView::TestCase::TestController::AUTHENTICITY_TOKEN_LENGTH
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -2881,6 +3262,10 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# wrong constant name typed_enum
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name typed_enum_reflections
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -2890,6 +3275,56 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# uninitialized constant ActiveRecord::InternalMetadata::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveRecord::InternalMetadata::Callbacks
+#                ActiveRecord::Callbacks
+#                ActiveRecord::InternalMetadata::Callback
+# uninitialized constant ActiveRecord::InternalMetadata::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActiveRecord::InternalMetadata::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveRecord::InternalMetadata::MinimumLengthError
+# uninitialized constant ActiveRecord::InternalMetadata::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::InternalMetadata::UNASSIGNABLE_KEYS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -2990,6 +3425,56 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# uninitialized constant ActiveRecord::SchemaMigration::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveRecord::SchemaMigration::Callbacks
+#                ActiveRecord::Callbacks
+#                ActiveRecord::SchemaMigration::Callback
+# uninitialized constant ActiveRecord::SchemaMigration::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActiveRecord::SchemaMigration::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveRecord::SchemaMigration::MinimumLengthError
+# uninitialized constant ActiveRecord::SchemaMigration::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveRecord::SchemaMigration::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # undefined method `to_yaml' for class `ActiveRecord::Type::Serialized'
 # Did you mean?  to_param
 # uninitialized constant VERSION
@@ -3035,6 +3520,67 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::Attachment::Callbacks
+#                ActiveStorage::Attachment::Callback
+# uninitialized constant ActiveStorage::Attachment::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActiveStorage::Attachment::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::Attachment::MinimumLengthError
+# uninitialized constant ActiveStorage::Attachment::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Attachment::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3042,6 +3588,10 @@
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_AssociationRelation::ClassMethods
 #                ActiveStorage::Attachment::ClassMethods
 #                ActiveStorage::Attachment::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3094,6 +3644,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3101,6 +3655,10 @@
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::Attachment::ClassMethods
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3153,6 +3711,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3160,6 +3722,10 @@
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Relation::ClassMethods
 #                ActiveStorage::Attachment::ClassMethods
 #                ActiveStorage::Attachment::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3212,6 +3778,70 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::Blob::Callbacks
+#                ActiveStorage::Blob::Callback
+# uninitialized constant ActiveStorage::Blob::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActiveStorage::Blob::LOCATOR_NAME
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Blob::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3219,6 +3849,10 @@
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_AssociationRelation::ClassMethods
 #                ActiveStorage::Blob::ClassMethods
 #                ActiveStorage::Blob::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3271,6 +3905,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3278,6 +3916,10 @@
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::Blob::ClassMethods
 #                ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3330,6 +3972,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3337,6 +3983,10 @@
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_Relation::ClassMethods
 #                ActiveStorage::Blob::ClassMethods
 #                ActiveStorage::Blob::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3389,6 +4039,75 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Blob::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::Record::Callbacks
+#                ActiveStorage::Record::Callback
+# uninitialized constant ActiveStorage::Record::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# wrong constant name <Class:GeneratedRelationMethods>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::Record::MinimumLengthError
+# uninitialized constant ActiveStorage::Record::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::Record::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3396,6 +4115,10 @@
 # Did you mean?  ActiveStorage::Record::ActiveRecord_AssociationRelation::ClassMethods
 #                ActiveStorage::Record::ClassMethods
 #                ActiveStorage::Record::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3448,6 +4171,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Record::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3455,6 +4182,10 @@
 # Did you mean?  ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::Record::ClassMethods
 #                ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3507,6 +4238,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::Record::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3514,6 +4249,10 @@
 # Did you mean?  ActiveStorage::Record::ActiveRecord_Relation::ClassMethods
 #                ActiveStorage::Record::ClassMethods
 #                ActiveStorage::Record::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3570,6 +4309,10 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name compose
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3606,6 +4349,67 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::ACTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::CALLBACKS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::VariantRecord::Callbacks
+#                ActiveStorage::VariantRecord::Callback
+# uninitialized constant ActiveStorage::VariantRecord::CALLBACK_FILTER_TYPES
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::CALL_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::FORWARD_PARAMETERS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  Forwardable
+# uninitialized constant ActiveStorage::VariantRecord::MAX_PASSWORD_LENGTH_ALLOWED
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::MINIMUM_TOKEN_LENGTH
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# Did you mean?  ActiveStorage::VariantRecord::MinimumLengthError
+# uninitialized constant ActiveStorage::VariantRecord::NAME_COMPILABLE_REGEXP
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::ORIGINAL_ATTRIBUTE_PREFIX
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::RESTRICTED_CLASS_METHODS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveStorage::VariantRecord::UNASSIGNABLE_KEYS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3613,6 +4417,10 @@
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::ClassMethods
 #                ActiveStorage::VariantRecord::ClassMethods
 #                ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3665,6 +4473,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3672,6 +4484,10 @@
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::VariantRecord::ClassMethods
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3724,6 +4540,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3731,6 +4551,10 @@
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Relation::ClassMethods
 #                ActiveStorage::VariantRecord::ClassMethods
 #                ActiveStorage::VariantRecord::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3783,6 +4607,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name initialize
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -3806,6 +4634,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # uninitialized constant ActiveSupport::TestCase::PASSTHROUGH_EXCEPTIONS
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# uninitialized constant ActiveSupport::TestCase::SECRET_KEY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -4188,6 +5020,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name encode
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -13198,11 +14034,51 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_blob_path
+# wrong constant name auth_failure_path
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_blob_url
+# wrong constant name auth_failure_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name membership_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name membership_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name memberships_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name memberships_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name organization_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name organization_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name organizations_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name organizations_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name passwords_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name passwords_url
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -13238,27 +14114,51 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_representation_path
+# wrong constant name registrations_accept_invitation_path
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_representation_url
+# wrong constant name registrations_accept_invitation_url
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_storage_proxy_path
+# wrong constant name registrations_cancel_email_change_path
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_storage_proxy_url
+# wrong constant name registrations_cancel_email_change_url
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_storage_redirect_path
+# wrong constant name registrations_confirm_path
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name rails_storage_redirect_url
+# wrong constant name registrations_confirm_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name registrations_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name registrations_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name session_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name session_url
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name sessions_path
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name sessions_url
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -13636,10 +14536,6 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name load_file
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
 # uninitialized constant Jacobian
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13731,6 +14627,18 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant Membership::CALLBACKS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13790,6 +14698,10 @@
 # Did you mean?  Membership::ActiveRecord_AssociationRelation::ClassMethods
 #                Membership::ClassMethods
 #                Membership::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13842,6 +14754,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Membership::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13849,6 +14765,10 @@
 # Did you mean?  Membership::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                Membership::ClassMethods
 #                Membership::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13901,6 +14821,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Membership::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13908,6 +14832,10 @@
 # Did you mean?  Membership::ActiveRecord_Relation::ClassMethods
 #                Membership::ClassMethods
 #                Membership::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13960,6 +14888,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Membership::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name organization_changed?
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -13973,6 +14905,14 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # wrong constant name user_previously_changed?
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name encode
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -14785,32 +15725,6 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name <Class:Application>
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# uninitialized constant NinetyfourApi::Application::ABSTRACT_RAILTIES
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# Did you mean?  AbstractController
-# uninitialized constant NinetyfourApi::Application::CALLBACK_FILTER_TYPES
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# uninitialized constant NinetyfourApi::Application::INITIAL_VARIABLES
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# Did you mean?  NinetyfourApi::Application::Initializer
-# wrong constant name <static-init>
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name <static-init>
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
 # wrong constant name key
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -14823,6 +15737,8 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# The source says Nokogiri::HTML4 is a STATIC_FIELD but reflection says it is a CLASS_OR_MODULE
+# The source says Nokogiri::HTML4 is a STATIC_FIELD but reflection says it is a CLASS_OR_MODULE
 # uninitialized constant RUBYGEMS_ACTIVATION_MONITOR
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -14947,14 +15863,14 @@
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
-# Did you mean?  OpenSSL::Digest::MD4
-#                OpenSSL::Digest::MD5
+# Did you mean?  OpenSSL::Digest::MD5
+#                OpenSSL::Digest::MD4
 # uninitialized constant OpenSSL::Digest::MD2
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
-# Did you mean?  OpenSSL::Digest::MD4
-#                OpenSSL::Digest::MD5
+# Did you mean?  OpenSSL::Digest::MD5
+#                OpenSSL::Digest::MD4
 # uninitialized constant OpenSSL::Digest::MDC2
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15645,74 +16561,16 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name <<
+# uninitialized constant OpenURI
 # 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name io
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
+# Did you mean?  Open3
+# uninitialized constant OpenURI
 # 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name size
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name <static-init>
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name initialize
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name initialize
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name content_type_parse
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name meta_add_field
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name meta_add_field2
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name meta_setup_encoding
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name init
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name check_options
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name open_http
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name open_loop
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name open_uri
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name redirectable?
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
-# wrong constant name scan_open_optional_arguments
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
+# Did you mean?  Open3
 # wrong constant name additional_message
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15742,6 +16600,18 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant Organization::CALLBACKS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15809,6 +16679,10 @@
 # Did you mean?  Organization::ActiveRecord_AssociationRelation::ClassMethods
 #                Organization::ClassMethods
 #                Organization::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15861,6 +16735,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Organization::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15868,6 +16746,10 @@
 # Did you mean?  Organization::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                Organization::ClassMethods
 #                Organization::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15920,6 +16802,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Organization::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15927,6 +16813,10 @@
 # Did you mean?  Organization::ActiveRecord_Relation::ClassMethods
 #                Organization::ClassMethods
 #                Organization::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -15979,6 +16869,18 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  Organization::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name encode
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name width_for
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -17827,6 +18729,14 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -24473,6 +25383,14 @@
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
+# wrong constant name inherited
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant Reline
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -25913,6 +26831,14 @@
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
+# wrong constant name encode
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name inherited
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name <=>
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26185,6 +27111,14 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # uninitialized constant SorbetRails::ModelPlugins::RUBYGEMS_ACTIVATION_MONITOR
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name pluck_to_tstruct
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <static-init>
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
@@ -26476,6 +27410,14 @@
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
+# wrong constant name T.anything
+# 
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
+# wrong constant name T.anything
+# 
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
 # wrong constant name T.noreturn
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26615,10 +27557,6 @@
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
 # Did you mean?  TracePoint
-# wrong constant name buffer_open
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
 # wrong constant name new2
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26759,10 +27697,6 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name buffer_open
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
 # wrong constant name origin
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26867,10 +27801,6 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
-# wrong constant name open
-# 
-#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
-#                         ^^^^^^^^^^
 # wrong constant name register_scheme
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26896,6 +27826,18 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant User::CALLBACKS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -26975,6 +27917,10 @@
 # Did you mean?  User::ActiveRecord_AssociationRelation::ClassMethods
 #                User::ClassMethods
 #                User::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27027,6 +27973,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  User::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27034,6 +27984,10 @@
 # Did you mean?  User::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                User::ClassMethods
 #                User::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27086,6 +28040,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  User::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27093,6 +28051,10 @@
 # Did you mean?  User::ActiveRecord_Relation::ClassMethods
 #                User::ClassMethods
 #                User::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27145,11 +28107,27 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  User::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant UserIdentity::ACTIONS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  ActionPack
+# wrong constant name <Class:ActiveRecord_AssociationRelation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Associations_CollectionProxy>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
+# wrong constant name <Class:ActiveRecord_Relation>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant UserIdentity::CALLBACKS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27205,6 +28183,10 @@
 # Did you mean?  UserIdentity::ActiveRecord_AssociationRelation::ClassMethods
 #                UserIdentity::ClassMethods
 #                UserIdentity::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant ActiveRecord::AssociationRelation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::AssociationRelation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27257,6 +28239,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  UserIdentity::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27264,6 +28250,10 @@
 # Did you mean?  UserIdentity::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                UserIdentity::ClassMethods
 #                UserIdentity::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant ActiveRecord::Associations::CollectionProxy::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Associations::CollectionProxy::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27316,6 +28306,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  UserIdentity::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::CLAUSE_METHODS
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27323,6 +28317,10 @@
 # Did you mean?  UserIdentity::ActiveRecord_Relation::ClassMethods
 #                UserIdentity::ClassMethods
 #                UserIdentity::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant ActiveRecord::Relation::Elem
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant ActiveRecord::Relation::FROZEN_EMPTY_ARRAY
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27375,6 +28373,10 @@
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
 # Did you mean?  UserIdentity::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # wrong constant name user_changed?
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
@@ -27383,11 +28385,23 @@
 # 
 #         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                         ^^^^^^^^^^
+# wrong constant name encode
+# 
+#         my_value = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                         ^^^^^^^^^^
 # uninitialized constant Vector
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^
 # uninitialized constant Vector
+# 
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
+# uninitialized constant WEBrick
+# 
+#       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
+#                       ^^^^^^^^^^
+# uninitialized constant WEBrick
 # 
 #       my_klass = klass.const_get(name, false) # rubocop:disable PrisonGuard/NoDynamicConstAccess
 #                       ^^^^^^^^^^

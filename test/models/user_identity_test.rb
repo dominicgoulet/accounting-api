@@ -1,3 +1,4 @@
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -14,6 +15,8 @@
 require 'test_helper'
 
 class UserIdentityTest < ActiveSupport::TestCase
+  extend T::Sig
+
   # test "the truth" do
   #   assert true
   # end

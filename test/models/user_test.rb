@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -28,73 +28,76 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  extend T::Sig
+
+  sig { void }
   def setup
-    @user = users(:valid)
+    @user = T.let(users(:valid), T.nilable(User))
   end
 
   test 'valid user' do
-    assert @user.valid?
+    assert T.must(@user).valid?
   end
 
   test 'invalid without email' do
-    @user.email = nil
+    T.must(@user).email = nil
 
-    refute @user.valid?
-    assert_not_nil @user.errors[:email]
+    refute T.must(@user).valid?
+    assert_not_nil T.must(@user).errors[:email]
   end
 
   test 'invalid without password' do
-    @user.password = nil
+    T.must(@user).password = nil
 
-    refute @user.valid?
-    assert_not_nil @user.errors[:password]
+    refute T.must(@user).valid?
+    assert_not_nil T.must(@user).errors[:password]
   end
 
   test '.can_update_password? updates password when a valid password is supplied' do
-    assert @user.can_update_password?('0000')
-    refute @user.can_update_password?('1111')
+    assert T.must(@user).can_update_password?('0000')
+    refute T.must(@user).can_update_password?('1111')
   end
 
   test '.avatar_url returns a valid URI' do
-    assert URI.parse(@user.avatar_url)
+    assert URI.parse(T.must(@user).avatar_url)
   end
 
   test '.confirmed? returns wether the user is confirmed or not' do
-    refute @user.confirmed?
-    assert @user.confirm!
-    assert @user.confirmed?
+    refute T.must(@user).confirmed?
+    assert T.must(@user).confirm!
+    assert T.must(@user).confirmed?
 
-    assert @user.change_email!('darth.vader2@theempire.org')
-    refute @user.confirmed?
+    assert T.must(@user).change_email!('darth.vader2@theempire.org')
+    refute T.must(@user).confirmed?
 
-    assert @user.confirm!
-    assert @user.confirmed?
+    assert T.must(@user).confirm!
+    assert T.must(@user).confirmed?
   end
 
   test '.send_new_user_instructions! returns true' do
-    assert @user.send_new_user_instructions!
+    assert T.must(@user).send_new_user_instructions!
   end
 
   test '.change_email! fails with invalid email' do
-    refute @user.change_email!('darth.vader')
-    refute @user.unconfirmed_email.present?
+    refute T.must(@user).change_email!('darth.vader')
+    refute T.must(@user).unconfirmed_email.present?
   end
 
   test '.change_email! manages unconfirmed_email' do
-    assert @user.change_email!('darth.vader2@theempire.org')
-    assert @user.unconfirmed_email == 'darth.vader2@theempire.org'
+    assert T.must(@user).change_email!('darth.vader2@theempire.org')
+    assert T.must(@user).unconfirmed_email == 'darth.vader2@theempire.org'
 
-    assert @user.cancel_change_email!
-    assert @user.unconfirmed_email.nil?
+    assert T.must(@user).cancel_change_email!
+    assert T.must(@user).unconfirmed_email.nil?
 
-    assert @user.change_email!('darth.vader2@theempire.org')
-    assert @user.confirm!
-    assert @user.email == 'darth.vader2@theempire.org'
-    assert @user.unconfirmed_email.nil?
+    assert T.must(@user).change_email!('darth.vader2@theempire.org')
+    assert T.must(@user).confirm!
+    assert T.must(@user).email == 'darth.vader2@theempire.org'
+    assert T.must(@user).unconfirmed_email.nil?
   end
 
   test '.send_reset_password_instructions! sets a new password reset token and returns true' do
-    assert @user.send_reset_password_instructions!
-    assert @user.reset_password_token.present?
+    assert T.must(@user).send_reset_password_instructions!
+    assert T.must(@user).reset_password_token.present?
   end
 end

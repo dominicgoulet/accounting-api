@@ -22,12 +22,12 @@ class Organization < ApplicationRecord
   # Validations
   validates :name, presence: true
 
-  sig { returns(T::Array[User]) }
+  sig { returns(T::Array[T.nilable(User)]) }
   def members
     memberships.where(level: :member).map(&:user)
   end
 
-  sig { returns(T::Array[User]) }
+  sig { returns(T::Array[T.nilable(User)]) }
   def owners
     memberships.where(level: :owner).map(&:user)
   end

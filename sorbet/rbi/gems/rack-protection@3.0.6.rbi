@@ -7,10 +7,10 @@
 # source://rack-protection//lib/rack/protection/version.rb#3
 module Rack
   class << self
-    # source://rack/2.2.6.4/lib/rack/version.rb#26
+    # source://rack/2.2.7/lib/rack/version.rb#26
     def release; end
 
-    # source://rack/2.2.6.4/lib/rack/version.rb#19
+    # source://rack/2.2.7/lib/rack/version.rb#19
     def version; end
   end
 end
@@ -615,7 +615,7 @@ class Rack::Protection::EscapedParams < ::Rack::Protection::Base
   class << self
     private
 
-    # source://rack/2.2.6.4/lib/rack/utils.rb#38
+    # source://rack/2.2.7/lib/rack/utils.rb#38
     def escape_url(s); end
   end
 end

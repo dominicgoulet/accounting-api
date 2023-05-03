@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: strict
 # frozen_string_literal: true
 
 # == Schema Information
@@ -17,31 +17,34 @@
 require 'test_helper'
 
 class MembershipTest < ActiveSupport::TestCase
+  extend T::Sig
+
+  sig { void }
   def setup
-    @membership = memberships(:valid)
+    @membership = T.let(memberships(:valid), T.nilable(Membership))
   end
 
   test 'valid membership' do
-    assert @membership.valid?
+    assert T.must(@membership).valid?
   end
 
   test 'invalid without a user' do
-    @membership.user = nil
+    T.must(@membership).user = nil
 
-    refute @membership.valid?
-    assert_not_nil @membership.errors[:user]
+    refute T.must(@membership).valid?
+    assert_not_nil T.must(@membership).errors[:user]
   end
 
   test 'invalid without an organization' do
-    @membership.organization = nil
+    T.must(@membership).organization = nil
 
-    refute @membership.valid?
-    assert_not_nil @membership.errors[:organization]
+    refute T.must(@membership).valid?
+    assert_not_nil T.must(@membership).errors[:organization]
   end
 
   test '.confirm! sets a confirmed_at and returns true' do
-    assert @membership.confirmed_at.blank?
-    assert @membership.confirm!
-    assert @membership.confirmed_at.present?
+    assert T.must(@membership).confirmed_at.blank?
+    assert T.must(@membership).confirm!
+    assert T.must(@membership).confirmed_at.present?
   end
 end

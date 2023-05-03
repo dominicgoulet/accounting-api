@@ -20,6 +20,14 @@ class ApplicationController < ActionController::API
     render json: { error: 'Record not found.' }, status: :not_found
   end
 
+  rescue_from ActionController::BadRequest do
+    render json: { error: 'Invalid parameters.' }, status: :unprocessable_entity
+  end
+
+  rescue_from ActionController::ParameterMissing do
+    render json: { error: 'Missing parameters.' }, status: :unprocessable_entity
+  end
+
   sig { returns(T::Boolean) }
   def signed_in?
     @current_user.present?
@@ -44,7 +52,8 @@ class ApplicationController < ActionController::API
 
   sig { params(object: ApplicationRecord).void }
   def render_errors_for(object)
-    render json: object.errors.to_json, status: :unprocessable_entity
+    render json: ApplicationRecordErrorSerializer.new(object.errors).serialize,
+           status: :unprocessable_entity
   end
 
   private
